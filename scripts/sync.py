@@ -215,6 +215,57 @@ def whoop_sync(tok, changed):
     print(f'WHOOP: {new} new morning(s)')
 
 
+
+# ---------- per-ride pro metrics (power curve, IF, VI, kJ, carbs, zones, decoupling) ----------
+def ftp_now():
+    import re
+    m = re.search(r'^FTP\s*=\s*(\d+)', (ROOT / 'build.py').read_text(), flags=re.M)
+    return int(m.group(1)) if m else 255
+
+
+def strava_metrics(tok, changed, limit=30):
+    at = strava_token(tok)
+    if not at:
+        return
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    import metrics as M
+    H = {'Authorization': f'Bearer {at}'}
+    path = DATA / 'ride_metrics.json'
+    store = json.loads(path.read_text()) if path.exists() else {}
+    since = int(time.time()) - 92 * 86400
+    acts = []
+    for page in (1, 2, 3):
+        batch = http('GET', f'https://www.strava.com/api/v3/athlete/activities?after={since}&per_page=100&page={page}', headers=H) or []
+        acts += batch
+        if len(batch) < 100:
+            break
+    todo = [a for a in sorted(acts, key=lambda a: a['start_date_local'], reverse=True)
+            if a.get('sport_type', a.get('type')) in ('Ride', 'VirtualRide') and a.get('device_watts')
+            and str(a['id']) not in store]
+    ftp = ftp_now()
+    done = 0
+    for a in todo[:limit]:
+        st = http('GET', f'https://www.strava.com/api/v3/activities/{a["id"]}/streams?keys=time,watts,heartrate&key_by_type=true', headers=H) or {}
+        t = (st.get('time') or {}).get('data')
+        w = (st.get('watts') or {}).get('data')
+        hr = (st.get('heartrate') or {}).get('data')
+        if not t or not w:
+            store[str(a['id'])] = {'date': a['start_date_local'][:10], 'skip': 'no power stream'}
+            continue
+        m = M.ride_metrics(t, w, hr, ftp)
+        if not m:
+            store[str(a['id'])] = {'date': a['start_date_local'][:10], 'skip': 'too short'}
+            continue
+        m.update(date=a['start_date_local'][:10], name=a.get('name', ''), ftp=ftp,
+                 indoor=a.get('sport_type', a.get('type')) == 'VirtualRide' or bool(a.get('trainer')),
+                 max_w=a.get('max_watts'))
+        store[str(a['id'])] = m
+        done += 1
+    if done:
+        path.write_text(json.dumps(store, separators=(',', ':')))
+        changed.append(f'{done} ride metric(s)')
+    print(f'Metrics: {done} ride(s) analysed, {max(0, len(todo) - limit)} left for the next run')
+
 def main():
     if not os.environ.get('TOKEN_KEY', '').strip():
         print('Not set up yet: add the TOKEN_KEY secret')
@@ -222,7 +273,7 @@ def main():
     tok = load_tokens()
     changed = []
     errors = []
-    for name, fn in (('Strava', strava_sync), ('WHOOP', whoop_sync)):
+    for name, fn in (('Strava', strava_sync), ('Metrics', strava_metrics), ('WHOOP', whoop_sync)):
         try:
             fn(tok, changed)
         except Exception as e:  # keep going so one service failing doesn't block the other

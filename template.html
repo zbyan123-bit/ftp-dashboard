@@ -112,7 +112,7 @@ window.addEventListener('load',()=>setTimeout(()=>{
  if(!matchMedia('(max-width:640px)').matches) return;
  const nav=document.querySelector('.fd .jump'); if(!nav) return;
  const names={'takeaways-sec':'Key takeaways'}; nav.querySelectorAll('a').forEach(a=>names[a.getAttribute('href').slice(1)]=a.textContent);
- const groups=[['This week',['weekplan','recovery']],['Load and fitness',['load','fitnote','stress','intensity','hrzones']],['Power and FTP',['power','pdcurve','sweetspot','efficiency','durability','indoor','climbs']],['Goal and plan',['goal','wkg','retest','tests','coach']],['Season so far',['takeaways-sec','ytd','trends']],['About the data',['data']]];
+ const groups=[['This week',['weekplan','recovery']],['Load and fitness',['load','fitnote','stress','intensity','hrzones']],['Power and FTP',['pro','power','pdcurve','sweetspot','efficiency','durability','indoor','climbs']],['Goal and plan',['goal','wkg','retest','tests','coach']],['Season so far',['takeaways-sec','ytd','trends']],['About the data',['data']]];
  const root=document.querySelector('.fd'); const kpi=document.getElementById('kpi-top'); let anchor=kpi||nav;
  nav.replaceChildren();
  groups.forEach(([g,ids],gi)=>{
@@ -156,6 +156,25 @@ window.addEventListener('load',()=>setTimeout(()=>{
  document.querySelectorAll('.fd .takeaways li p').forEach(clampIt);
 },450));
 </script>
+<style>
+.psvg{display:block;max-width:100%;height:auto;font-family:var(--font-anthropic-sans)}
+.psvg .ax{fill:var(--color-fg-muted);font-size:12px}
+.psvg .g{stroke:var(--cds-chart-grid);stroke-width:1}
+.psvg .ref{stroke:var(--color-fg-muted);stroke-dasharray:4 4;stroke-width:1.2}
+.psvg .goal{stroke:#c33d6b;stroke-dasharray:6 4;stroke-width:1.2}
+.psvg .l1{fill:none;stroke:#2a78d6;stroke-width:2.5}.psvg .l1d{fill:#2a78d6}
+.psvg .l2{fill:none;stroke:#d6852a;stroke-width:2;stroke-dasharray:6 4}.psvg .l2d{fill:#d6852a}
+.psvg .ze,.lg .ze{fill:#3a9a5b;background:#3a9a5b}.psvg .zg,.lg .zg{fill:#d6a12a;background:#d6a12a}.psvg .zh,.lg .zh{fill:#c33d6b;background:#c33d6b}
+.psvg .zl{fill:#fff;font-size:12px;font-weight:600}
+.psvg .band{fill:#2a78d6;opacity:.14}.psvg .dot{fill:var(--color-fg-muted);opacity:.7}
+.psvg .pb{fill:#7b5bd6}.psvg .pv{fill:var(--color-fg);font-size:13px}
+.lg{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:13px;color:var(--color-fg-muted)}
+.lg .k{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.lg .k1{background:#2a78d6}.lg .k2{background:repeating-linear-gradient(90deg,#d6852a 0 5px,transparent 5px 8px)}
+.prl{margin:0;padding-left:18px;line-height:1.7}
+.pt td.n,.pt th.n{text-align:right}
+@media (max-width:640px){.psvg .ax,.psvg .zl{font-size:15px}.psvg .pv{font-size:16px}}
+</style>
 </head><body><div id="dash-root">__TODAY__<style>
 #dash-root { --dash-gutter: clamp(16px, 3vw, 40px); }
 .fd { max-width: 1180px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); position: relative; display: flex; flex-direction: column; gap: var(--cds-gap-xl); padding-block: var(--cds-pad-md) var(--cds-pad-xl); }
@@ -230,7 +249,7 @@ window.addEventListener('load',()=>setTimeout(()=>{
     <h1 id="title">FTP goal dashboard</h1>
     <p class="lede dash-skeleton" data-source="notes" data-field="text" data-where="key=headline-1">—</p>
     <nav class="jump" aria-label="Sections">
-      <a href="#ytd">Year to date</a><a href="#trends">Monthly trends</a><a href="#load">Load</a><a href="#fitnote">Fitness events</a><a href="#stress">Ramp and stress</a><a href="#recovery">Recovery</a><a href="#intensity">Intensity</a><a href="#hrzones">Intensity by HR</a><a href="#weekplan">Plan vs actual</a><a href="#power">Power</a><a href="#pdcurve">Power curve</a><a href="#sweetspot">Sweet spot</a><a href="#efficiency">Efficiency</a><a href="#durability">Durability</a><a href="#indoor">Indoor</a><a href="#climbs">Climbs</a><a href="#goal">Gap to goal</a><a href="#wkg">Weight</a><a href="#retest">FTP retest</a><a href="#tests">Test calendar</a><a href="#coach">Coaching plan</a><a href="#data">Data notes</a>
+      <a href="#ytd">Year to date</a><a href="#trends">Monthly trends</a><a href="#load">Load</a><a href="#fitnote">Fitness events</a><a href="#stress">Ramp and stress</a><a href="#recovery">Recovery</a><a href="#intensity">Intensity</a><a href="#hrzones">Intensity by HR</a><a href="#weekplan">Plan vs actual</a><a href="#pro">Pro metrics</a><a href="#power">Power</a><a href="#pdcurve">Power curve</a><a href="#sweetspot">Sweet spot</a><a href="#efficiency">Efficiency</a><a href="#durability">Durability</a><a href="#indoor">Indoor</a><a href="#climbs">Climbs</a><a href="#goal">Gap to goal</a><a href="#wkg">Weight</a><a href="#retest">FTP retest</a><a href="#tests">Test calendar</a><a href="#coach">Coaching plan</a><a href="#data">Data notes</a>
     </nav>
   </header>
 
@@ -449,6 +468,7 @@ window.addEventListener('load',()=>setTimeout(()=>{
     <p class="verdict dash-skeleton" data-source="notes" data-field="text" data-where="key=hrz-1">—</p>
   </section>
 
+  __PRO__
   <section id="power" aria-labelledby="pw-h">
     <div class="sec-head"><span class="eyebrow">5 · Power progression</span><h2 id="pw-h">Best efforts since March and what they say about FTP</h2></div>
     <div class="card">

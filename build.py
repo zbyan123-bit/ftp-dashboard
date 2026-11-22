@@ -8,6 +8,7 @@ import json, datetime as dt, pathlib
 
 ROOT = pathlib.Path(__file__).parent
 FTP = 255  # working FTP in W. Change here when FTP changes.
+KG = 68  # body weight for W/kg. Change when the athlete gives a new weight.
 D = dt.date.fromisoformat
 load = lambda f: json.loads((ROOT / 'data' / f).read_text(encoding='utf-8'))
 
@@ -167,7 +168,19 @@ asof_s = f'{ad.day} {ad:%b}'
 asof_l = f'{ad.day} {ad:%B %Y}'
 html = (ROOT / 'template.html').read_text(encoding='utf-8')
 html = html.replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
-html = html.replace('__TODAY__', today_panel() + week_panel())
+import sys as _sys
+_sys.path.insert(0, str(ROOT / 'scripts'))
+import pro as _pro
+try:
+    _rm = load('ride_metrics.json')
+except FileNotFoundError:
+    _rm = {}
+pro_sec, pro_today = _pro.build(_rm, whoop, static.get('power_curve', []), FTP, KG, asof, week)
+_tp = today_panel()
+if pro_today:
+    _tp = _tp[:-len('</div>')] + pro_today + '</div>'
+html = html.replace('__PRO__', pro_sec)
+html = html.replace('__TODAY__', _tp + week_panel())
 html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 last = fd[-1]
