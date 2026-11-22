@@ -136,6 +136,26 @@ window.addEventListener('load',()=>setTimeout(()=>{
  .wk-more{color:var(--color-fg)}
 }
 </style>
+<style>
+.fd .head .lede{display:none!important}
+.fd .card>p.note{display:none}
+.fd .card.info>p.note{display:block}
+.fd .ib{margin-left:6px;width:20px;height:20px;border-radius:50%;border:1px solid var(--color-border-line);background:transparent;color:var(--color-fg-muted);font-size:12px;line-height:18px;padding:0;cursor:pointer;vertical-align:middle;font-family:inherit}
+.fd .card.info .ib{background:var(--color-fg);color:var(--color-panel)}
+.fd .clamp{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fd .more{align-self:flex-start;border:0;background:transparent;color:#1d5fb8;font-size:13px;padding:2px 0;cursor:pointer;font-family:inherit}
+@media (prefers-color-scheme: dark){.fd .more{color:#6aa8ff}}
+</style>
+<script>
+window.addEventListener('load',()=>setTimeout(()=>{
+ document.querySelectorAll('.fd .card').forEach(c=>{const ps=c.querySelectorAll(':scope>p.note');const h=c.querySelector(':scope>h3');if(!ps.length||!h)return;
+   const b=document.createElement('button');b.className='ib';b.type='button';b.textContent='i';b.title='About this chart';b.onclick=e=>{e.stopPropagation();c.classList.toggle('info');};h.appendChild(b);});
+ const clampIt=(el)=>{if(!el||el.dataset.cl)return;el.dataset.cl=1;if(el.textContent.trim().length<140)return;el.classList.add('clamp');
+   const m=document.createElement('button');m.className='more';m.type='button';m.textContent='More';m.onclick=e=>{e.stopPropagation();const o=el.classList.toggle('clamp');m.textContent=o?'More':'Less';};el.after(m);};
+ document.querySelectorAll('.fd .verdict').forEach(clampIt);
+ document.querySelectorAll('.fd .takeaways li p').forEach(clampIt);
+},450));
+</script>
 </head><body><div id="dash-root">__TODAY__<style>
 #dash-root { --dash-gutter: clamp(16px, 3vw, 40px); }
 .fd { max-width: 1180px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); position: relative; display: flex; flex-direction: column; gap: var(--cds-gap-xl); padding-block: var(--cds-pad-md) var(--cds-pad-xl); }

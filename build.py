@@ -111,10 +111,7 @@ def today_panel():
     parts = [f'<div class="t-h"><b>Today</b><span>updated {fday(asof)}</span></div>', f'<div class="t-g">{g}</div>']
     if lr:
         t_ = tss(lr)
-        parts.append(f'<div class="t-n"><b>Last ride · {fday(lr["date"])}</b>{_h.escape(lr["name"])}: {hm(lr["moving_h"])}, NP {lr.get("np") or lr["avg_w"]} W, about {t_:.0f} TSS</div>')
-    if nxt:
-        parts.append(f'<div class="t-n"><b>Next · {fday(nxt["date"])}</b>{_h.escape(nxt["plan"])}</div>')
-    parts.append('<div class="t-foot">TSS and form are estimates from normalized power. Sections below the summary marked 20 Nov are snapshots. On a phone, tap a section title to open it.</div>')
+        parts.append(f'<div class="t-n"><b>Last ride · {fday(lr["date"])}</b>{hm(lr["moving_h"])} · NP {lr.get("np") or lr["avg_w"]} W · {t_:.0f} TSS</div>')
     return '<div class="today">' + ''.join(parts) + '</div>'
 
 def week_panel():
@@ -149,12 +146,12 @@ def week_panel():
         done = f'<div class="wa">Ridden: {_h.escape(r["actual"])}{" · " + str(r["tss"]) + " TSS" if r.get("tss") else ""}{" · " + _h.escape(r["flags"]) if r.get("flags") else ""}</div>' if st != 'upcoming' else ''
         cur = ' cur' if nxt and d == nxt['date'] else ''
         dl = f'{D(d):%a} {D(d).day}'
-        rows.append(f'<details class="wd{cur}"{" open" if cur else ""}><summary><span class="dd">{dl}</span><span class="dt">{_h.escape(title)}</span>{chip}</summary>'
+        rows.append(f'<details class="wd{cur}"><summary><span class="dd">{dl}</span><span class="dt">{_h.escape(title)}</span>{chip}</summary>'
                     f'<div class="wp">{_h.escape(r["plan"])}</div>{done}</details>')
     note = notes.get(days[0], '')
     head = f'<div class="t-h"><b>This week’s plan</b><span>{D(days[0]).day} {D(days[0]):%b} – {D(days[6]).day} {D(days[6]):%b}</span></div>'
     return ('<div class="today wk">' + head + (f'<div class="wn">{_h.escape(note)}</div>' if note else '') +
-            ''.join(rows) + '<div class="t-foot">Tap a day for the full session and WHOOP rules.</div></div>')
+            ''.join(rows) + '</div>')
 
 data = dict(static)
 try:

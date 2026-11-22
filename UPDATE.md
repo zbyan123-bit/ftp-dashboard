@@ -28,7 +28,7 @@ Netlify publishes the repository root on every push. There is no build step on N
    other fields null/"" and `status: "upcoming"`). Actuals for dates after 20 Nov are filled by
    `build.py` from rides. The "This week's plan" card shows the Mon–Sun week holding the next
    planned day; when a new week starts and it has no rows yet, add that week's 7 rows from the
-   training plan, and a one-line summary keyed by its Monday in `data/week_notes.json`.
+   training plan, and a short summary keyed by its Monday in `data/week_notes.json` (under 70 characters, e.g. "Target 250–290 TSS · FTP test Thu"). Keep `short` titles to 2–5 words.
 4. Run `python3 build.py`. It prints CTL, ATL and TSB. It must finish without errors.
 5. Commit `data/`, `out/` and `index.html` with message `Daily update YYYY-MM-DD` and push to `main`.
 6. **Sync the Claude dashboard** (artifact https://claude.ai/artifact/XGAw1RAm8FtV3hmRTzFhkn, the
