@@ -1,0 +1,47 @@
+name: Connect Strava or WHOOP
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: 'strava or whoop'
+        required: true
+        type: choice
+        options: [strava, whoop]
+      code:
+        description: 'Code from the callback page'
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: dashboard-sync
+  cancel-in-progress: false
+jobs:
+  connect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Hide the code in logs
+        env:
+          CODE: ${{ inputs.code }}
+        run: echo "::add-mask::$CODE"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet cryptography==43.0.3
+      - name: Exchange code for tokens
+        env:
+          TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          WHOOP_CLIENT_ID: ${{ secrets.WHOOP_CLIENT_ID }}
+          WHOOP_CLIENT_SECRET: ${{ secrets.WHOOP_CLIENT_SECRET }}
+          CODE: ${{ inputs.code }}
+        run: python scripts/connect.py "${{ inputs.service }}" "$CODE"
+      - name: Save encrypted tokens
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "dashboard-bot@users.noreply.github.com"
+          git add state/tokens.enc
+          git commit -q -m "Connect ${{ inputs.service }}"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 5; done

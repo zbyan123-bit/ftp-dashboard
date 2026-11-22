@@ -1,5 +1,10 @@
 # Daily dashboard update (for the morning check-in)
 
+> Once the GitHub Action "Sync Strava and WHOOP" is connected (state/tokens.enc exists and
+> recent commits say "Auto update"), it adds rides and WHOOP mornings by itself every 30 minutes.
+> Then skip steps 1–2 below: only do step 3 (plan rows), run build.py, commit if anything
+> changed, and do step 6 (sync to the Claude dashboard).
+
 The site is `index.html`, built by `python3 build.py` from `template.html` and `data/*.json`.
 Netlify publishes the repository root on every push. There is no build step on Netlify, so
 `index.html` must be rebuilt and committed.

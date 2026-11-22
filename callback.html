@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect code</title>
+<style>:root{color-scheme:light dark}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;max-width:560px;margin:40px auto;padding:0 16px;line-height:1.5;background:#f6f6f4;color:#222}
+@media (prefers-color-scheme:dark){body{background:#121316;color:#e8e8e6}.box{background:#1e1f22!important;border-color:#34363b!important}}
+.box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin:16px 0}code{word-break:break-all;font-size:15px}button{font-size:16px;padding:10px 16px;border-radius:999px;border:1px solid #888;background:transparent;color:inherit}</style></head>
+<body><h1>Connection code</h1><div id="out" class="box">No code in this link.</div>
+<script>
+const q=new URLSearchParams(location.search),code=q.get('code'),err=q.get('error'),svc=(q.get('scope')||'').includes('activity')?'Strava':(q.get('state')?'WHOOP':'');
+const o=document.getElementById('out');
+if(err){o.textContent='The app returned an error: '+err+'. Try the link again.';}
+else if(code){o.innerHTML='<p>'+(svc?svc+' ':'')+'code (single use, expires in a few minutes):</p><p><code id="c"></code></p><button id="b">Copy code</button><p>Paste it into GitHub: Actions → Connect Strava or WHOOP → Run workflow.</p>';
+ document.getElementById('c').textContent=code;
+ document.getElementById('b').onclick=()=>{navigator.clipboard.writeText(code).then(()=>{document.getElementById('b').textContent='Copied';});};}
+</script></body></html>
