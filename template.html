@@ -75,9 +75,9 @@ window.addEventListener('load',()=>setTimeout(()=>{
  document.querySelectorAll('.fd section[id]').forEach(s=>{
    const h=s.querySelector(':scope>.sec-head'); if(!h) return;
    s.classList.add('mc'); if(!open.has(s.id)) s.classList.add('closed');
-   h.addEventListener('click',()=>s.classList.toggle('closed'));
+   h.addEventListener('click',()=>{const opening=s.classList.contains('closed'); if(opening){document.querySelectorAll('.fd section.mc').forEach(o=>{if(o!==s)o.classList.add('closed');}); s.classList.remove('closed'); requestAnimationFrame(()=>s.scrollIntoView({block:'start'}));} else s.classList.add('closed');});
  });
- document.querySelectorAll('.jump a').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById(a.getAttribute('href').slice(1)); if(s) s.classList.remove('closed');},true));
+ document.querySelectorAll('.jump a').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById(a.getAttribute('href').slice(1)); if(s&&s.classList.contains('mc')){document.querySelectorAll('.fd section.mc').forEach(o=>o.classList.add('closed')); s.classList.remove('closed');}},true));
  const wk=document.getElementById('wk-t');
  if(wk){const rows=[...wk.querySelectorAll('tbody tr')];let up=0;rows.forEach((r,i)=>{const st=r.innerText.includes('upcoming');if(st){up++;r.classList.add('up');}else if(i>=up+10)r.classList.add('old');});
    const n=rows.filter(r=>r.classList.contains('old')).length;
