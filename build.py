@@ -92,10 +92,10 @@ def today_panel():
     last = fd[-1]
     w = whoop[-1] if whoop else None
     ad = D(asof); mon = ad - dt.timedelta(ad.weekday())
-    wk_r = [r for r in rides if mon.isoformat() <= r['date'] <= asof]
+    wk_r = [r for r in week if mon.isoformat() <= r['date'] <= asof and (r.get('actual_h') or 0) > 0]
     wk_tss = sum(fdm[(mon + dt.timedelta(i)).isoformat()]['load'] for i in range((ad - mon).days + 1)
                  if (mon + dt.timedelta(i)).isoformat() in fdm)
-    wk_h = sum(r['moving_h'] for r in wk_r)
+    wk_h = sum(r['actual_h'] for r in wk_r)
     lr = rides[-1] if rides else None
     nxt = next((r for r in week if r['status'] == 'upcoming' and r['date'] >= asof), None)
     cards = []
