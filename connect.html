@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect apps</title>
+<style>:root{color-scheme:light dark}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;max-width:560px;margin:32px auto;padding:0 16px;line-height:1.5;background:#f6f6f4;color:#222}
+@media (prefers-color-scheme:dark){body{background:#121316;color:#e8e8e6}.box{background:#1e1f22!important;border-color:#34363b!important}}
+.box{background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px;margin:16px 0}input{font-size:16px;padding:8px;width:100%;box-sizing:border-box;margin:6px 0 10px;border-radius:8px;border:1px solid #999;background:transparent;color:inherit}button{font-size:16px;padding:10px 16px;border-radius:999px;border:1px solid #888;background:transparent;color:inherit}</style></head>
+<body><h1>Connect Strava and WHOOP</h1>
+<div class="box"><b>Strava</b><br>Client ID (a number, from strava.com/settings/api):<input id="s" inputmode="numeric"><button id="sb">Approve on Strava</button></div>
+<div class="box"><b>WHOOP</b><br>Client ID (from the WHOOP developer dashboard):<input id="w"><button id="wb">Approve on WHOOP</button></div>
+<p>After you approve, you land on a page with a code. Copy it into GitHub: Actions → Connect Strava or WHOOP → Run workflow.</p>
+<script>
+const R=location.origin+location.pathname.replace(/connect\.html$/,'')+'callback.html';
+document.getElementById('sb').onclick=()=>{const id=document.getElementById('s').value.trim();if(!id)return;
+ location.href='https://www.strava.com/oauth/authorize?'+new URLSearchParams({client_id:id,response_type:'code',redirect_uri:R,approval_prompt:'force',scope:'read,activity:read_all'});};
+document.getElementById('wb').onclick=()=>{const id=document.getElementById('w').value.trim();if(!id)return;
+ const st=Math.random().toString(36).slice(2,10).padEnd(8,'x');
+ location.href='https://api.prod.whoop.com/oauth/oauth2/auth?'+new URLSearchParams({client_id:id,response_type:'code',redirect_uri:R,scope:'offline read:recovery read:sleep read:cycles',state:st});};
+</script></body></html>
