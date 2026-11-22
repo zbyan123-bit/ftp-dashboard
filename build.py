@@ -82,6 +82,41 @@ for r in week:
              actual=('Indoor ' if ind else '') + f'{hm(h)} at NP {np_} W',
              flags=', '.join(flags), status=status)
 
+# ---- "Today" panel at the top of the page
+import html as _h
+
+def fday(s):
+    d = D(s); return f'{d:%a} {d.day} {d:%b}'
+
+def today_panel():
+    last = fd[-1]
+    w = whoop[-1] if whoop else None
+    ad = D(asof); mon = ad - dt.timedelta(ad.weekday())
+    wk_r = [r for r in rides if mon.isoformat() <= r['date'] <= asof]
+    wk_tss = sum(fdm[(mon + dt.timedelta(i)).isoformat()]['load'] for i in range((ad - mon).days + 1)
+                 if (mon + dt.timedelta(i)).isoformat() in fdm)
+    wk_h = sum(r['moving_h'] for r in wk_r)
+    lr = rides[-1] if rides else None
+    nxt = next((r for r in week if r['status'] == 'upcoming' and r['date'] >= asof), None)
+    cards = []
+    if w:
+        rc = w['recovery']; cls = 'ok' if rc >= 66 else ('warn' if rc >= 50 else 'bad')
+        cards.append(('WHOOP recovery', f'<span class="{cls}">{rc}%</span>',
+                      f'{fday(w["date"])} · HRV {w["hrv"]} · RHR {w["rhr"]}'))
+        cards.append(('Sleep', f'{w["asleep_h"]:.1f} h', f'bed {w["bedtime"]} · {w["sleep_perf"]}% performance'))
+    tsb = last['tsb']; tcls = 'ok' if tsb >= -10 else ('warn' if tsb >= -25 else 'bad')
+    cards.append(('Form (TSB)', f'<span class="{tcls}">{tsb:+.0f}</span>', f'fitness {last["ctl"]:.0f} · fatigue {last["atl"]:.0f}'))
+    cards.append(('This week', f'{wk_tss:.0f} TSS', f'{wk_h:.1f} h · {len(wk_r)} ride{"s" if len(wk_r) != 1 else ""} since {fday(mon.isoformat())}'))
+    g = ''.join(f'<div class="t-c"><div class="l">{l}</div><div class="v">{v}</div><div class="s">{_h.escape(s)}</div></div>' for l, v, s in cards)
+    parts = [f'<div class="t-h"><b>Today</b><span>updated {fday(asof)}</span></div>', f'<div class="t-g">{g}</div>']
+    if lr:
+        t_ = tss(lr)
+        parts.append(f'<div class="t-n"><b>Last ride · {fday(lr["date"])}</b>{_h.escape(lr["name"])}: {hm(lr["moving_h"])}, NP {lr.get("np") or lr["avg_w"]} W, about {t_:.0f} TSS</div>')
+    if nxt:
+        parts.append(f'<div class="t-n"><b>Next · {fday(nxt["date"])}</b>{_h.escape(nxt["plan"])}</div>')
+    parts.append('<div class="t-foot">TSS and form are estimates from normalized power. Sections below the summary marked 20 Nov are snapshots. On a phone, tap a section title to open it.</div>')
+    return '<div class="today">' + ''.join(parts) + '</div>'
+
 data = dict(static)
 data.update(fitness_daily=fd, whoop=whoop, week=week)
 
@@ -90,6 +125,7 @@ asof_s = f'{ad.day} {ad:%b}'
 asof_l = f'{ad.day} {ad:%B %Y}'
 html = (ROOT / 'template.html').read_text(encoding='utf-8')
 html = html.replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
+html = html.replace('__TODAY__', today_panel())
 html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 last = fd[-1]
