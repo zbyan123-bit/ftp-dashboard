@@ -30,7 +30,19 @@ Netlify publishes the repository root on every push. There is no build step on N
    planned day; when a new week starts and it has no rows yet, add that week's 7 rows from the
    training plan, and a one-line summary keyed by its Monday in `data/week_notes.json`.
 4. Run `python3 build.py`. It prints CTL, ATL and TSB. It must finish without errors.
-5. Commit `data/` and `index.html` with message `Daily update YYYY-MM-DD` and push to `main`.
+5. Commit `data/`, `out/` and `index.html` with message `Daily update YYYY-MM-DD` and push to `main`.
+6. **Sync the Claude dashboard** (artifact https://claude.ai/artifact/XGAw1RAm8FtV3hmRTzFhkn, the
+   same data shown inside Claude). `build.py` writes `out/fitness_daily.json`, `out/whoop.json`,
+   `out/week.json` and `out/sweet_spot.json`.
+   - Upload each file with the Artifact tool: `url` = the artifact URL, `asset: true`,
+     `file_path` = the file (one file per call). Each result gives a `/_blob/<id>` url.
+   - `ArtifactData` `get` on collection `datasets`, doc ids `fitness_daily`, `whoop`, `week`,
+     `sweet_spot`, to read each document's current `version`.
+   - One `ArtifactData` `batch` of four `update` writes (each with its `if_version`) setting
+     `source: {"kind":"file","name":"<name>.json","url":"/_blob/<id>","format":"json"}` and
+     `updated: {"at": "<now, ISO UTC>", "by": "Claude, daily update"}`. `format: "json"` is required.
+   - Never change `files/index.html` or any other dataset. If this step fails, say
+     "Claude dashboard not updated: <reason>"; the GitHub page is still fine.
 
 ## Rules
 - Only real numbers from Strava and WHOOP. Never invent a value; leave a day out if data is missing.

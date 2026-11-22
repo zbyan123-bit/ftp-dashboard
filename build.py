@@ -175,3 +175,9 @@ html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 last = fd[-1]
 print(f'built index.html as of {asof}: CTL {last["ctl"]}, ATL {last["atl"]}, TSB {last["tsb"]}')
+
+# ---- exports for the Claude dashboard (same rows as this page)
+out = ROOT / 'out'; out.mkdir(exist_ok=True)
+for name in ('fitness_daily', 'whoop', 'week', 'sweet_spot'):
+    (out / f'{name}.json').write_text(json.dumps(data[name], ensure_ascii=False), encoding='utf-8')
+(out / 'asof.txt').write_text(asof, encoding='utf-8')
