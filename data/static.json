@@ -1,0 +1,2870 @@
+{
+"weekly": [
+{
+"week_end": "2026-01-04",
+"hours": 2.4,
+"load": 158,
+"fitness_ctl": 3.7,
+"fatigue_atl": 19.3,
+"ctl_change": null,
+"flag": ""
+},
+{
+"week_end": "2026-01-11",
+"hours": 4.4,
+"load": 236,
+"fitness_ctl": 8.3,
+"fatigue_atl": 26.5,
+"ctl_change": 4.6,
+"flag": ""
+},
+{
+"week_end": "2026-01-18",
+"hours": 3.2,
+"load": 113,
+"fitness_ctl": 9.3,
+"fatigue_atl": 16.0,
+"ctl_change": 1.1,
+"flag": ""
+},
+{
+"week_end": "2026-01-25",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 7.9,
+"fatigue_atl": 5.4,
+"ctl_change": -1.4,
+"flag": "gap"
+},
+{
+"week_end": "2026-02-01",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 6.7,
+"fatigue_atl": 1.8,
+"ctl_change": -1.2,
+"flag": "gap"
+},
+{
+"week_end": "2026-02-08",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 5.6,
+"fatigue_atl": 0.6,
+"ctl_change": -1.0,
+"flag": "gap"
+},
+{
+"week_end": "2026-02-15",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 4.8,
+"fatigue_atl": 0.2,
+"ctl_change": -0.9,
+"flag": "gap"
+},
+{
+"week_end": "2026-02-22",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 4.0,
+"fatigue_atl": 0.1,
+"ctl_change": -0.7,
+"flag": "gap"
+},
+{
+"week_end": "2026-03-01",
+"hours": 0.0,
+"load": 0,
+"fitness_ctl": 3.4,
+"fatigue_atl": 0.0,
+"ctl_change": -0.6,
+"flag": "gap"
+},
+{
+"week_end": "2026-03-08",
+"hours": 1.4,
+"load": 60,
+"fitness_ctl": 4.3,
+"fatigue_atl": 8.6,
+"ctl_change": 0.9,
+"flag": ""
+},
+{
+"week_end": "2026-03-15",
+"hours": 12.4,
+"load": 466,
+"fitness_ctl": 14.2,
+"fatigue_atl": 54.0,
+"ctl_change": 9.9,
+"flag": "ramp"
+},
+{
+"week_end": "2026-03-22",
+"hours": 16.0,
+"load": 571,
+"fitness_ctl": 24.9,
+"fatigue_atl": 78.0,
+"ctl_change": 10.7,
+"flag": "ramp"
+},
+{
+"week_end": "2026-03-29",
+"hours": 16.2,
+"load": 623,
+"fitness_ctl": 35.0,
+"fatigue_atl": 89.5,
+"ctl_change": 10.1,
+"flag": "ramp"
+},
+{
+"week_end": "2026-04-05",
+"hours": 12.3,
+"load": 469,
+"fitness_ctl": 40.1,
+"fatigue_atl": 78.2,
+"ctl_change": 5.1,
+"flag": ""
+},
+{
+"week_end": "2026-04-12",
+"hours": 18.0,
+"load": 687,
+"fitness_ctl": 49.1,
+"fatigue_atl": 90.6,
+"ctl_change": 9.0,
+"flag": "ramp"
+},
+{
+"week_end": "2026-04-19",
+"hours": 10.6,
+"load": 419,
+"fitness_ctl": 50.7,
+"fatigue_atl": 67.3,
+"ctl_change": 1.6,
+"flag": ""
+},
+{
+"week_end": "2026-04-26",
+"hours": 19.0,
+"load": 685,
+"fitness_ctl": 58.0,
+"fatigue_atl": 87.9,
+"ctl_change": 7.3,
+"flag": "ramp"
+},
+{
+"week_end": "2026-05-03",
+"hours": 15.1,
+"load": 543,
+"fitness_ctl": 61.4,
+"fatigue_atl": 91.2,
+"ctl_change": 3.4,
+"flag": ""
+},
+{
+"week_end": "2026-05-10",
+"hours": 11.4,
+"load": 420,
+"fitness_ctl": 61.1,
+"fatigue_atl": 69.8,
+"ctl_change": -0.3,
+"flag": ""
+},
+{
+"week_end": "2026-05-17",
+"hours": 10.7,
+"load": 457,
+"fitness_ctl": 61.7,
+"fatigue_atl": 63.3,
+"ctl_change": 0.5,
+"flag": ""
+},
+{
+"week_end": "2026-05-24",
+"hours": 14.0,
+"load": 628,
+"fitness_ctl": 66.0,
+"fatigue_atl": 79.4,
+"ctl_change": 4.3,
+"flag": ""
+},
+{
+"week_end": "2026-05-31",
+"hours": 14.3,
+"load": 502,
+"fitness_ctl": 66.8,
+"fatigue_atl": 72.7,
+"ctl_change": 0.9,
+"flag": ""
+},
+{
+"week_end": "2026-06-07",
+"hours": 13.4,
+"load": 425,
+"fitness_ctl": 65.8,
+"fatigue_atl": 61.6,
+"ctl_change": -1.1,
+"flag": ""
+},
+{
+"week_end": "2026-06-14",
+"hours": 15.1,
+"load": 616,
+"fitness_ctl": 69.2,
+"fatigue_atl": 80.0,
+"ctl_change": 3.5,
+"flag": ""
+},
+{
+"week_end": "2026-06-21",
+"hours": 16.7,
+"load": 552,
+"fitness_ctl": 71.1,
+"fatigue_atl": 88.7,
+"ctl_change": 1.9,
+"flag": ""
+},
+{
+"week_end": "2026-06-28",
+"hours": 13.9,
+"load": 565,
+"fitness_ctl": 72.7,
+"fatigue_atl": 83.9,
+"ctl_change": 1.5,
+"flag": ""
+},
+{
+"week_end": "2026-07-05",
+"hours": 6.1,
+"load": 276,
+"fitness_ctl": 67.4,
+"fatigue_atl": 49.8,
+"ctl_change": -5.3,
+"flag": ""
+},
+{
+"week_end": "2026-07-12",
+"hours": 7.4,
+"load": 450,
+"fitness_ctl": 66.8,
+"fatigue_atl": 56.7,
+"ctl_change": -0.6,
+"flag": ""
+},
+{
+"week_end": "2026-07-19",
+"hours": 3.7,
+"load": 225,
+"fitness_ctl": 61.3,
+"fatigue_atl": 35.5,
+"ctl_change": -5.6,
+"flag": "low"
+},
+{
+"week_end": "2026-07-26",
+"hours": 3.5,
+"load": 144,
+"fitness_ctl": 55.0,
+"fatigue_atl": 26.3,
+"ctl_change": -6.3,
+"flag": "low"
+},
+{
+"week_end": "2026-08-02",
+"hours": 4.9,
+"load": 216,
+"fitness_ctl": 51.3,
+"fatigue_atl": 30.7,
+"ctl_change": -3.7,
+"flag": "low"
+},
+{
+"week_end": "2026-08-09",
+"hours": 4.2,
+"load": 255,
+"fitness_ctl": 49.0,
+"fatigue_atl": 33.4,
+"ctl_change": -2.3,
+"flag": "low"
+},
+{
+"week_end": "2026-08-16",
+"hours": 2.5,
+"load": 129,
+"fitness_ctl": 44.3,
+"fatigue_atl": 25.7,
+"ctl_change": -4.7,
+"flag": "low"
+},
+{
+"week_end": "2026-08-23",
+"hours": 5.8,
+"load": 265,
+"fitness_ctl": 43.6,
+"fatigue_atl": 43.1,
+"ctl_change": -0.7,
+"flag": ""
+},
+{
+"week_end": "2026-08-30",
+"hours": 3.9,
+"load": 205,
+"fitness_ctl": 41.5,
+"fatigue_atl": 36.2,
+"ctl_change": -2.1,
+"flag": "low"
+},
+{
+"week_end": "2026-09-06",
+"hours": 2.4,
+"load": 97,
+"fitness_ctl": 37.4,
+"fatigue_atl": 26.2,
+"ctl_change": -4.1,
+"flag": "low"
+},
+{
+"week_end": "2026-09-13",
+"hours": 14.2,
+"load": 527,
+"fitness_ctl": 43.2,
+"fatigue_atl": 57.0,
+"ctl_change": 5.9,
+"flag": ""
+},
+{
+"week_end": "2026-09-20",
+"hours": 12.8,
+"load": 624,
+"fitness_ctl": 50.1,
+"fatigue_atl": 70.5,
+"ctl_change": 6.9,
+"flag": ""
+},
+{
+"week_end": "2026-09-27",
+"hours": 11.0,
+"load": 547,
+"fitness_ctl": 54.8,
+"fatigue_atl": 85.8,
+"ctl_change": 4.7,
+"flag": ""
+},
+{
+"week_end": "2026-10-04",
+"hours": 11.3,
+"load": 516,
+"fitness_ctl": 58.0,
+"fatigue_atl": 82.5,
+"ctl_change": 3.2,
+"flag": ""
+},
+{
+"week_end": "2026-10-11",
+"hours": 17.9,
+"load": 931,
+"fitness_ctl": 69.0,
+"fatigue_atl": 97.8,
+"ctl_change": 11.0,
+"flag": "ramp"
+},
+{
+"week_end": "2026-10-18",
+"hours": 11.6,
+"load": 439,
+"fitness_ctl": 67.7,
+"fatigue_atl": 67.2,
+"ctl_change": -1.2,
+"flag": ""
+},
+{
+"week_end": "2026-10-25",
+"hours": 8.1,
+"load": 392,
+"fitness_ctl": 65.6,
+"fatigue_atl": 52.2,
+"ctl_change": -2.1,
+"flag": ""
+},
+{
+"week_end": "2026-11-01",
+"hours": 11.9,
+"load": 594,
+"fitness_ctl": 68.8,
+"fatigue_atl": 78.2,
+"ctl_change": 3.2,
+"flag": ""
+},
+{
+"week_end": "2026-11-08",
+"hours": 11.3,
+"load": 597,
+"fitness_ctl": 71.0,
+"fatigue_atl": 73.2,
+"ctl_change": 2.2,
+"flag": ""
+},
+{
+"week_end": "2026-11-15",
+"hours": 13.7,
+"load": 853,
+"fitness_ctl": 79.0,
+"fatigue_atl": 108.6,
+"ctl_change": 8.0,
+"flag": "ramp over 7"
+}
+],
+"sweet_spot": [
+{
+"key": "2026-10-22 #1",
+"date": "2026-10-22",
+"session": "Planned session, outdoor",
+"effort": 1,
+"minutes": 12.6,
+"avg_w": 228.2,
+"avg_hr": 172.7,
+"max_hr": 178,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-22 #2",
+"date": "2026-10-22",
+"session": "Planned session, outdoor",
+"effort": 2,
+"minutes": 15.6,
+"avg_w": 231.4,
+"avg_hr": 175.4,
+"max_hr": 182,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-22 #3",
+"date": "2026-10-22",
+"session": "Planned session, outdoor",
+"effort": 3,
+"minutes": 12.8,
+"avg_w": 232.9,
+"avg_hr": 176.6,
+"max_hr": 185,
+"terrain": "Flat",
+"in_band": true
+},
+{
+"key": "2026-10-28 #1",
+"date": "2026-10-28",
+"session": "Planned session, outdoor",
+"effort": 1,
+"minutes": 12.8,
+"avg_w": 224.0,
+"avg_hr": 160.0,
+"max_hr": 165,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-28 #2",
+"date": "2026-10-28",
+"session": "Planned session, outdoor",
+"effort": 2,
+"minutes": 15.6,
+"avg_w": 224.5,
+"avg_hr": 160.5,
+"max_hr": 169,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-28 #3",
+"date": "2026-10-28",
+"session": "Planned session, outdoor",
+"effort": 3,
+"minutes": 14.6,
+"avg_w": 227.3,
+"avg_hr": 163.8,
+"max_hr": 171,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-30 #1",
+"date": "2026-10-30",
+"session": "Unplanned, outdoor (a rest day)",
+"effort": 1,
+"minutes": 15.5,
+"avg_w": 229.7,
+"avg_hr": 167.4,
+"max_hr": 171,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-10-31 #1",
+"date": "2026-10-31",
+"session": "MyWhoosh Sweet Spot 15, indoor (stopped early)",
+"effort": 1,
+"minutes": 5.0,
+"avg_w": 250.2,
+"avg_hr": 166.7,
+"max_hr": 178,
+"terrain": "Indoor, 5 min block",
+"in_band": false
+},
+{
+"key": "2026-11-04 #1",
+"date": "2026-11-04",
+"session": "Planned session, outdoor",
+"effort": 1,
+"minutes": 12.9,
+"avg_w": 230.0,
+"avg_hr": 164.1,
+"max_hr": 168,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-11-04 #2",
+"date": "2026-11-04",
+"session": "Planned session, outdoor",
+"effort": 2,
+"minutes": 15.8,
+"avg_w": 234.8,
+"avg_hr": 164.4,
+"max_hr": 169,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-11-04 #3",
+"date": "2026-11-04",
+"session": "Planned session, outdoor",
+"effort": 3,
+"minutes": 14.4,
+"avg_w": 226.3,
+"avg_hr": 161.1,
+"max_hr": 169,
+"terrain": "Flat",
+"in_band": true
+},
+{
+"key": "2026-11-12 #1",
+"date": "2026-11-12",
+"session": "Planned session, outdoor",
+"effort": 1,
+"minutes": 14.7,
+"avg_w": 227.5,
+"avg_hr": 166.5,
+"max_hr": 172,
+"terrain": "Climb",
+"in_band": true
+},
+{
+"key": "2026-11-12 #2",
+"date": "2026-11-12",
+"session": "Planned session, outdoor",
+"effort": 2,
+"minutes": 15.4,
+"avg_w": 232.4,
+"avg_hr": 166.4,
+"max_hr": 174,
+"terrain": "Climb",
+"in_band": true
+}
+],
+"indoor": [
+{
+"key": "2026-10-24",
+"date": "2026-10-24",
+"name": "Indoor ride",
+"hours": 1.5,
+"avg_w": 179.6,
+"np": 182,
+"max_w": 268,
+"avg_hr": 151.3,
+"tss": 76.6,
+"note": "Longer than planned"
+},
+{
+"key": "2026-10-25",
+"date": "2026-10-25",
+"name": "Indoor ride",
+"hours": 2.01,
+"avg_w": 172.1,
+"np": 174,
+"max_w": 253,
+"avg_hr": 147.7,
+"tss": 93.4,
+"note": "Longer than planned"
+},
+{
+"key": "2026-10-31",
+"date": "2026-10-31",
+"name": "MyWhoosh Sweet Spot 15",
+"hours": 0.31,
+"avg_w": null,
+"np": 215,
+"max_w": null,
+"avg_hr": null,
+"tss": 21.8,
+"note": "Stopped early after one 5-minute block at 250 W, WHOOP recovery was 39"
+},
+{
+"key": "2026-11-07",
+"date": "2026-11-07",
+"name": "MyWhoosh 90 Minute Endurance",
+"hours": 1.51,
+"avg_w": 168,
+"np": 175,
+"max_w": 282,
+"avg_hr": 151,
+"tss": 70.9,
+"note": "Planned was indoor sweet spot; rode alternating 166/192 W blocks"
+},
+{
+"key": "2026-11-11",
+"date": "2026-11-11",
+"name": "MyWhoosh indoor ride",
+"hours": 1.09,
+"avg_w": 170.4,
+"np": 175,
+"max_w": 260,
+"avg_hr": 151.2,
+"tss": 51.2,
+"note": "Planned 90 min with some 190 W, stopped at 65 min"
+},
+{
+"key": "2026-11-17",
+"date": "2026-11-17",
+"name": "MyWhoosh Brussels Town Square",
+"hours": 1.53,
+"avg_w": 153.6,
+"np": 156,
+"max_w": 212,
+"avg_hr": 139.3,
+"tss": 57.3,
+"note": "Z2 on plan: 1:32 at 145-160 W"
+},
+{
+"key": "2026-11-19",
+"date": "2026-11-19",
+"name": "MyWhoosh Al Wathba",
+"hours": 1.23,
+"avg_w": 162.3,
+"np": 163,
+"max_w": 216,
+"avg_hr": 146.7,
+"tss": 50.1,
+"note": "Z2, about 8 W over the 155 W cap; 1:14 of 1:30"
+}
+],
+"efficiency": [
+{
+"date": "2026-03-09",
+"ef": 0.937,
+"np": 136,
+"avg_hr": 145.1,
+"hours": 1.75
+},
+{
+"date": "2026-03-12",
+"ef": 1.062,
+"np": 162,
+"avg_hr": 152.6,
+"hours": 1.59
+},
+{
+"date": "2026-03-13",
+"ef": 1.033,
+"np": 165,
+"avg_hr": 159.8,
+"hours": 2.38
+},
+{
+"date": "2026-03-14",
+"ef": 0.991,
+"np": 160,
+"avg_hr": 161.4,
+"hours": 5.06
+},
+{
+"date": "2026-03-15",
+"ef": 0.995,
+"np": 148,
+"avg_hr": 148.8,
+"hours": 1.59
+},
+{
+"date": "2026-03-17",
+"ef": 1.041,
+"np": 152,
+"avg_hr": 146.0,
+"hours": 1.63
+},
+{
+"date": "2026-03-18",
+"ef": 1.094,
+"np": 163,
+"avg_hr": 149.0,
+"hours": 2.76
+},
+{
+"date": "2026-03-19",
+"ef": 1.01,
+"np": 141,
+"avg_hr": 139.6,
+"hours": 1.67
+},
+{
+"date": "2026-03-20",
+"ef": 1.088,
+"np": 178,
+"avg_hr": 163.6,
+"hours": 3.21
+},
+{
+"date": "2026-03-21",
+"ef": 0.863,
+"np": 124,
+"avg_hr": 143.7,
+"hours": 3.0
+},
+{
+"date": "2026-03-22",
+"ef": 0.964,
+"np": 146,
+"avg_hr": 151.5,
+"hours": 3.71
+},
+{
+"date": "2026-03-24",
+"ef": 1.066,
+"np": 162,
+"avg_hr": 152.0,
+"hours": 2.73
+},
+{
+"date": "2026-03-25",
+"ef": 1.001,
+"np": 149,
+"avg_hr": 148.8,
+"hours": 3.21
+},
+{
+"date": "2026-03-26",
+"ef": 0.907,
+"np": 129,
+"avg_hr": 142.2,
+"hours": 1.67
+},
+{
+"date": "2026-03-27",
+"ef": 1.113,
+"np": 166,
+"avg_hr": 149.1,
+"hours": 3.2
+},
+{
+"date": "2026-03-29",
+"ef": 0.973,
+"np": 132,
+"avg_hr": 135.6,
+"hours": 3.12
+},
+{
+"date": "2026-03-31",
+"ef": 1.082,
+"np": 153,
+"avg_hr": 141.4,
+"hours": 2.36
+},
+{
+"date": "2026-04-01",
+"ef": 0.989,
+"np": 144,
+"avg_hr": 145.6,
+"hours": 6.1
+},
+{
+"date": "2026-04-05",
+"ef": 1.15,
+"np": 180,
+"avg_hr": 156.5,
+"hours": 3.81
+},
+{
+"date": "2026-04-06",
+"ef": 1.024,
+"np": 147,
+"avg_hr": 143.5,
+"hours": 2.94
+},
+{
+"date": "2026-04-07",
+"ef": 1.064,
+"np": 159,
+"avg_hr": 149.5,
+"hours": 2.83
+},
+{
+"date": "2026-04-08",
+"ef": 1.037,
+"np": 154,
+"avg_hr": 148.5,
+"hours": 3.66
+},
+{
+"date": "2026-04-10",
+"ef": 0.923,
+"np": 137,
+"avg_hr": 148.4,
+"hours": 2.91
+},
+{
+"date": "2026-04-11",
+"ef": 1.145,
+"np": 179,
+"avg_hr": 156.3,
+"hours": 2.93
+},
+{
+"date": "2026-04-11",
+"ef": 1.089,
+"np": 168,
+"avg_hr": 154.3,
+"hours": 2.71
+},
+{
+"date": "2026-04-13",
+"ef": 1.044,
+"np": 141,
+"avg_hr": 135.1,
+"hours": 2.42
+},
+{
+"date": "2026-04-15",
+"ef": 1.09,
+"np": 156,
+"avg_hr": 143.1,
+"hours": 3.67
+},
+{
+"date": "2026-04-17",
+"ef": 1.089,
+"np": 142,
+"avg_hr": 130.4,
+"hours": 1.68
+},
+{
+"date": "2026-04-18",
+"ef": 1.159,
+"np": 179,
+"avg_hr": 154.4,
+"hours": 2.17
+},
+{
+"date": "2026-04-20",
+"ef": 1.208,
+"np": 171,
+"avg_hr": 141.5,
+"hours": 2.42
+},
+{
+"date": "2026-04-21",
+"ef": 0.975,
+"np": 137,
+"avg_hr": 140.5,
+"hours": 1.69
+},
+{
+"date": "2026-04-22",
+"ef": 0.971,
+"np": 146,
+"avg_hr": 150.4,
+"hours": 6.9
+},
+{
+"date": "2026-04-25",
+"ef": 1.172,
+"np": 172,
+"avg_hr": 146.7,
+"hours": 3.04
+},
+{
+"date": "2026-04-26",
+"ef": 1.009,
+"np": 137,
+"avg_hr": 135.8,
+"hours": 3.78
+},
+{
+"date": "2026-04-28",
+"ef": 1.033,
+"np": 140,
+"avg_hr": 135.5,
+"hours": 2.49
+},
+{
+"date": "2026-04-29",
+"ef": 1.039,
+"np": 139,
+"avg_hr": 133.8,
+"hours": 1.73
+},
+{
+"date": "2026-05-01",
+"ef": 1.115,
+"np": 154,
+"avg_hr": 138.1,
+"hours": 3.26
+},
+{
+"date": "2026-05-02",
+"ef": 1.245,
+"np": 172,
+"avg_hr": 138.1,
+"hours": 2.71
+},
+{
+"date": "2026-05-03",
+"ef": 1.088,
+"np": 152,
+"avg_hr": 139.7,
+"hours": 4.9
+},
+{
+"date": "2026-05-05",
+"ef": 0.992,
+"np": 152,
+"avg_hr": 153.3,
+"hours": 7.61
+},
+{
+"date": "2026-05-10",
+"ef": 1.138,
+"np": 167,
+"avg_hr": 146.7,
+"hours": 2.96
+},
+{
+"date": "2026-05-12",
+"ef": 1.09,
+"np": 153,
+"avg_hr": 140.4,
+"hours": 4.36
+},
+{
+"date": "2026-05-14",
+"ef": 1.03,
+"np": 139,
+"avg_hr": 134.9,
+"hours": 1.61
+},
+{
+"date": "2026-05-18",
+"ef": 1.168,
+"np": 158,
+"avg_hr": 135.3,
+"hours": 2.8
+},
+{
+"date": "2026-05-19",
+"ef": 1.159,
+"np": 173,
+"avg_hr": 149.3,
+"hours": 4.94
+},
+{
+"date": "2026-05-21",
+"ef": 0.987,
+"np": 130,
+"avg_hr": 131.7,
+"hours": 1.72
+},
+{
+"date": "2026-05-26",
+"ef": 1.122,
+"np": 154,
+"avg_hr": 137.2,
+"hours": 3.53
+},
+{
+"date": "2026-05-27",
+"ef": 1.27,
+"np": 170,
+"avg_hr": 133.9,
+"hours": 2.68
+},
+{
+"date": "2026-05-29",
+"ef": 1.011,
+"np": 150,
+"avg_hr": 148.4,
+"hours": 5.13
+},
+{
+"date": "2026-05-30",
+"ef": 0.983,
+"np": 130,
+"avg_hr": 132.2,
+"hours": 2.94
+},
+{
+"date": "2026-06-01",
+"ef": 0.993,
+"np": 126,
+"avg_hr": 126.9,
+"hours": 1.59
+},
+{
+"date": "2026-06-02",
+"ef": 1.059,
+"np": 149,
+"avg_hr": 140.7,
+"hours": 3.88
+},
+{
+"date": "2026-06-03",
+"ef": 1.036,
+"np": 132,
+"avg_hr": 127.4,
+"hours": 2.56
+},
+{
+"date": "2026-06-05",
+"ef": 1.253,
+"np": 174,
+"avg_hr": 138.9,
+"hours": 3.29
+},
+{
+"date": "2026-06-07",
+"ef": 0.956,
+"np": 101,
+"avg_hr": 105.7,
+"hours": 2.03
+},
+{
+"date": "2026-06-08",
+"ef": 1.209,
+"np": 159,
+"avg_hr": 131.5,
+"hours": 2.72
+},
+{
+"date": "2026-06-09",
+"ef": 1.298,
+"np": 165,
+"avg_hr": 127.1,
+"hours": 2.74
+},
+{
+"date": "2026-06-11",
+"ef": 1.118,
+"np": 150,
+"avg_hr": 134.2,
+"hours": 2.74
+},
+{
+"date": "2026-06-12",
+"ef": 1.306,
+"np": 184,
+"avg_hr": 140.9,
+"hours": 3.01
+},
+{
+"date": "2026-06-14",
+"ef": 1.117,
+"np": 156,
+"avg_hr": 139.7,
+"hours": 3.84
+},
+{
+"date": "2026-06-17",
+"ef": 1.053,
+"np": 129,
+"avg_hr": 122.5,
+"hours": 2.61
+},
+{
+"date": "2026-06-19",
+"ef": 1.153,
+"np": 164,
+"avg_hr": 142.2,
+"hours": 4.27
+},
+{
+"date": "2026-06-20",
+"ef": 0.993,
+"np": 143,
+"avg_hr": 144.0,
+"hours": 9.83
+},
+{
+"date": "2026-06-22",
+"ef": 1.109,
+"np": 135,
+"avg_hr": 121.7,
+"hours": 1.78
+},
+{
+"date": "2026-06-24",
+"ef": 1.157,
+"np": 167,
+"avg_hr": 144.4,
+"hours": 2.69
+},
+{
+"date": "2026-06-26",
+"ef": 0.998,
+"np": 130,
+"avg_hr": 130.2,
+"hours": 2.05
+},
+{
+"date": "2026-06-27",
+"ef": 1.077,
+"np": 159,
+"avg_hr": 147.7,
+"hours": 4.11
+},
+{
+"date": "2026-07-24",
+"ef": 1.111,
+"np": 164,
+"avg_hr": 147.6,
+"hours": 2.11
+},
+{
+"date": "2026-08-16",
+"ef": 1.164,
+"np": 170,
+"avg_hr": 146.0,
+"hours": 1.72
+},
+{
+"date": "2026-09-18",
+"ef": 1.142,
+"np": 162,
+"avg_hr": 141.8,
+"hours": 4.06
+},
+{
+"date": "2026-09-23",
+"ef": 1.106,
+"np": 173,
+"avg_hr": 156.4,
+"hours": 2.83
+},
+{
+"date": "2026-09-24",
+"ef": 1.142,
+"np": 158,
+"avg_hr": 138.3,
+"hours": 2.07
+},
+{
+"date": "2026-09-26",
+"ef": 1.197,
+"np": 185,
+"avg_hr": 154.5,
+"hours": 3.29
+},
+{
+"date": "2026-10-01",
+"ef": 1.105,
+"np": 174,
+"avg_hr": 157.4,
+"hours": 5.11
+},
+{
+"date": "2026-10-02",
+"ef": 1.224,
+"np": 174,
+"avg_hr": 142.1,
+"hours": 2.66
+},
+{
+"date": "2026-10-03",
+"ef": 1.207,
+"np": 170,
+"avg_hr": 140.8,
+"hours": 3.49
+},
+{
+"date": "2026-10-06",
+"ef": 1.241,
+"np": 181,
+"avg_hr": 145.9,
+"hours": 4.65
+},
+{
+"date": "2026-10-07",
+"ef": 1.179,
+"np": 152,
+"avg_hr": 128.9,
+"hours": 2.31
+},
+{
+"date": "2026-10-08",
+"ef": 1.213,
+"np": 182,
+"avg_hr": 150.1,
+"hours": 3.19
+},
+{
+"date": "2026-10-09",
+"ef": 1.272,
+"np": 190,
+"avg_hr": 149.4,
+"hours": 2.87
+},
+{
+"date": "2026-10-12",
+"ef": 1.157,
+"np": 164,
+"avg_hr": 141.7,
+"hours": 3.34
+},
+{
+"date": "2026-10-14",
+"ef": 1.233,
+"np": 168,
+"avg_hr": 136.2,
+"hours": 2.62
+},
+{
+"date": "2026-10-15",
+"ef": 1.155,
+"np": 172,
+"avg_hr": 148.9,
+"hours": 3.23
+},
+{
+"date": "2026-10-16",
+"ef": 0.942,
+"np": 104,
+"avg_hr": 110.4,
+"hours": 2.39
+},
+{
+"date": "2026-10-22",
+"ef": 1.087,
+"np": 170,
+"avg_hr": 156.4,
+"hours": 3.22
+},
+{
+"date": "2026-10-23",
+"ef": 1.044,
+"np": 143,
+"avg_hr": 137.0,
+"hours": 1.55
+},
+{
+"date": "2026-10-28",
+"ef": 1.271,
+"np": 189,
+"avg_hr": 148.7,
+"hours": 3.21
+},
+{
+"date": "2026-10-29",
+"ef": 1.176,
+"np": 160,
+"avg_hr": 136.1,
+"hours": 2.61
+},
+{
+"date": "2026-10-30",
+"ef": 1.257,
+"np": 191,
+"avg_hr": 151.9,
+"hours": 3.45
+},
+{
+"date": "2026-11-01",
+"ef": 1.281,
+"np": 173,
+"avg_hr": 135.1,
+"hours": 2.63
+},
+{
+"date": "2026-11-02",
+"ef": 1.192,
+"np": 174,
+"avg_hr": 146,
+"hours": 3.21
+},
+{
+"date": "2026-11-04",
+"ef": 1.268,
+"np": 189,
+"avg_hr": 149,
+"hours": 3.08
+},
+{
+"date": "2026-11-05",
+"ef": 1.291,
+"np": 191,
+"avg_hr": 148,
+"hours": 4.97
+},
+{
+"date": "2026-11-12",
+"ef": 1.238,
+"np": 186,
+"avg_hr": 150.2,
+"hours": 3.2
+},
+{
+"date": "2026-11-20",
+"ef": 1.263,
+"np": 173,
+"avg_hr": 137,
+"hours": 2.44
+}
+],
+"events": [
+{
+"key": "e1",
+"date": "2026-10-09",
+"label": "FTP set to 255 W",
+"kind": "info"
+},
+{
+"key": "e2",
+"date": "2026-10-11",
+"label": "17.9 h week ends, CTL +11",
+"kind": "bad"
+},
+{
+"key": "e3",
+"date": "2026-10-18",
+"label": "Unplanned day off",
+"kind": "info"
+},
+{
+"key": "e4",
+"date": "2026-10-30",
+"label": "Unplanned hard ride on a rest day",
+"kind": "bad"
+},
+{
+"key": "e5",
+"date": "2026-10-31",
+"label": "WHOOP recovery 39",
+"kind": "bad"
+},
+{
+"key": "e6",
+"date": "2026-11-02",
+"label": "3:12 ride, planned 1\u20131.5 h",
+"kind": "warn"
+},
+{
+"key": "e7",
+"date": "2026-11-05",
+"label": "4:58 long ride at NP 191 W, planned under 170 W",
+"kind": "warn"
+},
+{
+"key": "e8",
+"date": "2026-11-09",
+"label": "288 TSS day: 59 min at 255 W on a climb",
+"kind": "warn"
+},
+{
+"key": "e9",
+"date": "2026-11-14",
+"label": "New 2 to 15-min power bests (5 min 327 W)",
+"kind": "info"
+},
+{
+"key": "e10",
+"date": "2026-11-15",
+"label": "3 h group ride at WHOOP 41%; week about 900 TSS",
+"kind": "bad"
+}
+],
+"kpis": [
+{
+"metric": "rides",
+"label": "Rides",
+"value": 153,
+"unit": ""
+},
+{
+"metric": "km",
+"label": "Distance",
+"value": 10924.6,
+"unit": "km"
+},
+{
+"metric": "elev",
+"label": "Elevation",
+"value": 83308,
+"unit": "m"
+},
+{
+"metric": "hours",
+"label": "Moving time",
+"value": 411.0,
+"unit": "h"
+},
+{
+"metric": "ftp_est",
+"label": "Working FTP",
+"value": 255,
+"unit": "W"
+},
+{
+"metric": "ftp_wkg",
+"label": "Working FTP",
+"value": 3.75,
+"unit": "W/kg"
+},
+{
+"metric": "target",
+"label": "Target",
+"value": 292,
+"unit": "W"
+},
+{
+"metric": "gap_est",
+"label": "Gap to target",
+"value": 37,
+"unit": "W"
+},
+{
+"metric": "need_est",
+"label": "Needed per month (from 255 W)",
+"value": 4.6,
+"unit": "W/mo"
+},
+{
+"metric": "hist_rate",
+"label": "Your rate Mar\u2192Oct",
+"value": 4.6,
+"unit": "W/mo"
+},
+{
+"metric": "best_rate",
+"label": "Best month (Mar\u2192Apr)",
+"value": 10,
+"unit": "W/mo"
+},
+{
+"metric": "ctl",
+"label": "Fitness (CTL)",
+"value": 72.7,
+"unit": ""
+},
+{
+"metric": "atl",
+"label": "Fatigue (ATL)",
+"value": 66.3,
+"unit": ""
+},
+{
+"metric": "tsb",
+"label": "Form (TSB)",
+"value": 6.4,
+"unit": ""
+},
+{
+"metric": "peak_ctl",
+"label": "Peak fitness (week to 15 Nov)",
+"value": 79.0,
+"unit": ""
+},
+{
+"metric": "last7",
+"label": "Last 7 days (14\u201320 Nov), outdoor",
+"value": 8.2,
+"unit": "h"
+},
+{
+"metric": "ef_mar",
+"label": "Efficiency Mar",
+"value": 1.013,
+"unit": "NP/HR"
+},
+{
+"metric": "ef_oct",
+"label": "Efficiency Oct",
+"value": 1.173,
+"unit": "NP/HR"
+},
+{
+"metric": "w150_mar",
+"label": "Power at 150 bpm, Mar",
+"value": 128.4,
+"unit": "W"
+},
+{
+"metric": "w150_oct",
+"label": "Power at 150 bpm, Oct",
+"value": 155.9,
+"unit": "W"
+},
+{
+"metric": "proj_hist",
+"label": "Jun 2027 at your 2026 pace",
+"value": 292,
+"unit": "W"
+},
+{
+"metric": "proj_low",
+"label": "Jun 2027 realistic (+8%)",
+"value": 275,
+"unit": "W"
+},
+{
+"metric": "proj_high",
+"label": "Jun 2027 realistic (+12%)",
+"value": 286,
+"unit": "W"
+},
+{
+"metric": "best20",
+"label": "Best 20 min, Garmin",
+"value": 266,
+"unit": "W"
+},
+{
+"metric": "tw_pr",
+"label": "Tanwang PR",
+"value": 31.85,
+"unit": "min"
+},
+{
+"metric": "no_hr",
+"label": "Rides without HR",
+"value": 16,
+"unit": ""
+},
+{
+"metric": "gap_days",
+"label": "Longest break (Jan 13 \u2192 Mar 8)",
+"value": 54,
+"unit": "days"
+}
+],
+"power_curve": [
+{
+"key": "60",
+"seconds": 60,
+"label": "1 min",
+"watts": 514,
+"wkg": 7.56,
+"goal_w": 589,
+"date": "2026-11-14",
+"kind": "Lower bound",
+"source": "Strava best-efforts table (2nd best; your best 1 min is higher and not in my data)"
+},
+{
+"key": "120",
+"seconds": 120,
+"label": "2 min",
+"watts": 371,
+"wkg": 5.46,
+"goal_w": 425,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts"
+},
+{
+"key": "180",
+"seconds": 180,
+"label": "3 min",
+"watts": 334,
+"wkg": 4.91,
+"goal_w": 382,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts"
+},
+{
+"key": "300",
+"seconds": 300,
+"label": "5 min",
+"watts": 327,
+"wkg": 4.81,
+"goal_w": 374,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts (was 318 W on 9 Oct)"
+},
+{
+"key": "480",
+"seconds": 480,
+"label": "8 min",
+"watts": 309,
+"wkg": 4.54,
+"goal_w": 354,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts"
+},
+{
+"key": "600",
+"seconds": 600,
+"label": "10 min",
+"watts": 305,
+"wkg": 4.49,
+"goal_w": 349,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts"
+},
+{
+"key": "900",
+"seconds": 900,
+"label": "15 min",
+"watts": 272,
+"wkg": 4.0,
+"goal_w": 311,
+"date": "2026-11-14",
+"kind": "Measured",
+"source": "Strava best efforts"
+},
+{
+"key": "1200",
+"seconds": 1200,
+"label": "20 min",
+"watts": 266,
+"wkg": 3.91,
+"goal_w": 305,
+"date": "2026-10-09",
+"kind": "Measured",
+"source": "Garmin file, Tanwang PR"
+},
+{
+"key": "1911",
+"seconds": 1911,
+"label": "31 min",
+"watts": 266,
+"wkg": 3.91,
+"goal_w": 305,
+"date": "2026-10-09",
+"kind": "Measured",
+"source": "Tanwang 31:51, power stream"
+},
+{
+"key": "3575",
+"seconds": 3575,
+"label": "1 h",
+"watts": 255.4,
+"wkg": 3.76,
+"goal_w": 292,
+"date": "2026-11-09",
+"kind": "Measured",
+"source": "Lap average, 59:35 climb at HR 181"
+},
+{
+"key": "5216",
+"seconds": 5216,
+"label": "87 min",
+"watts": 184,
+"wkg": 2.71,
+"goal_w": 211,
+"date": "2026-07-09",
+"kind": "Lower bound",
+"source": "Whole-ride average, NP 223 W"
+}
+],
+"load_weekly": [
+{
+"week_start": "2026-08-03",
+"week_end": "2026-08-09",
+"days": 7,
+"tss": 255,
+"ctl_end": 49.0,
+"atl_end": 33.4,
+"tsb_end": 15.6,
+"ramp": -2.3,
+"monotony": 0.85,
+"strain": 217,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-08-10",
+"week_end": "2026-08-16",
+"days": 7,
+"tss": 129,
+"ctl_end": 44.3,
+"atl_end": 25.7,
+"tsb_end": 18.5,
+"ramp": -4.7,
+"monotony": 0.62,
+"strain": 80,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-08-17",
+"week_end": "2026-08-23",
+"days": 7,
+"tss": 265,
+"ctl_end": 43.6,
+"atl_end": 43.1,
+"tsb_end": 0.5,
+"ramp": -0.7,
+"monotony": 0.6,
+"strain": 159,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-08-24",
+"week_end": "2026-08-30",
+"days": 7,
+"tss": 205,
+"ctl_end": 41.5,
+"atl_end": 36.2,
+"tsb_end": 5.3,
+"ramp": -2.1,
+"monotony": 0.63,
+"strain": 129,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-08-31",
+"week_end": "2026-09-06",
+"days": 7,
+"tss": 97,
+"ctl_end": 37.4,
+"atl_end": 26.2,
+"tsb_end": 11.2,
+"ramp": -4.1,
+"monotony": 0.41,
+"strain": 40,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-09-07",
+"week_end": "2026-09-13",
+"days": 7,
+"tss": 527,
+"ctl_end": 43.2,
+"atl_end": 57.0,
+"tsb_end": -13.8,
+"ramp": 5.8,
+"monotony": 1.33,
+"strain": 701,
+"flag": "ramp 5 to 7",
+"partial": false
+},
+{
+"week_start": "2026-09-14",
+"week_end": "2026-09-20",
+"days": 7,
+"tss": 624,
+"ctl_end": 50.1,
+"atl_end": 70.5,
+"tsb_end": -20.4,
+"ramp": 6.9,
+"monotony": 1.11,
+"strain": 693,
+"flag": "ramp 5 to 7",
+"partial": false
+},
+{
+"week_start": "2026-09-21",
+"week_end": "2026-09-27",
+"days": 7,
+"tss": 546,
+"ctl_end": 54.8,
+"atl_end": 85.8,
+"tsb_end": -30.9,
+"ramp": 4.7,
+"monotony": 1.07,
+"strain": 585,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-09-28",
+"week_end": "2026-10-04",
+"days": 7,
+"tss": 516,
+"ctl_end": 58.0,
+"atl_end": 82.5,
+"tsb_end": -24.5,
+"ramp": 3.2,
+"monotony": 0.81,
+"strain": 418,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-10-05",
+"week_end": "2026-10-11",
+"days": 7,
+"tss": 931,
+"ctl_end": 69.0,
+"atl_end": 97.8,
+"tsb_end": -28.9,
+"ramp": 11.0,
+"monotony": 1.28,
+"strain": 1192,
+"flag": "ramp over 7",
+"partial": false
+},
+{
+"week_start": "2026-10-12",
+"week_end": "2026-10-18",
+"days": 7,
+"tss": 439,
+"ctl_end": 67.7,
+"atl_end": 67.2,
+"tsb_end": 0.5,
+"ramp": -1.3,
+"monotony": 1.0,
+"strain": 439,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-10-19",
+"week_end": "2026-10-25",
+"days": 7,
+"tss": 562,
+"ctl_end": 69.6,
+"atl_end": 74.9,
+"tsb_end": -5.3,
+"ramp": 1.9,
+"monotony": 1.18,
+"strain": 664,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-10-26",
+"week_end": "2026-11-01",
+"days": 7,
+"tss": 616,
+"ctl_end": 72.7,
+"atl_end": 88.6,
+"tsb_end": -15.9,
+"ramp": 3.1,
+"monotony": 1.16,
+"strain": 714,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-11-02",
+"week_end": "2026-11-08",
+"days": 7,
+"tss": 668,
+"ctl_end": 75.9,
+"atl_end": 85.4,
+"tsb_end": -9.4,
+"ramp": 3.2,
+"monotony": 0.96,
+"strain": 641,
+"flag": "",
+"partial": false
+},
+{
+"week_start": "2026-11-09",
+"week_end": "2026-11-15",
+"days": 7,
+"tss": 904,
+"ctl_end": 84.3,
+"atl_end": 116.7,
+"tsb_end": -32.4,
+"ramp": 8.4,
+"monotony": 1.24,
+"strain": 1121,
+"flag": "ramp over 7",
+"partial": false
+},
+{
+"week_start": "2026-11-16",
+"week_end": "2026-11-20",
+"days": 5,
+"tss": 220,
+"ctl_end": 79.8,
+"atl_end": 81.3,
+"tsb_end": -1.5,
+"ramp": -4.5,
+"monotony": 1.05,
+"strain": 231,
+"flag": "partial week",
+"partial": true
+}
+],
+"durability": [
+{
+"key": "2026-11-04 #1",
+"date": "2026-11-04",
+"kind": "Sweet spot (target 224-232 W)",
+"minutes": 12.9,
+"watts": 230.0,
+"pct_ftp": 90,
+"avg_hr": 164.1,
+"kj_before": 480
+},
+{
+"key": "2026-11-04 #2",
+"date": "2026-11-04",
+"kind": "Sweet spot (target 224-232 W)",
+"minutes": 15.8,
+"watts": 234.8,
+"pct_ftp": 92,
+"avg_hr": 164.4,
+"kj_before": 717
+},
+{
+"key": "2026-11-04 #3",
+"date": "2026-11-04",
+"kind": "Sweet spot (target 224-232 W)",
+"minutes": 14.4,
+"watts": 226.3,
+"pct_ftp": 89,
+"avg_hr": 161.1,
+"kj_before": 1026
+},
+{
+"key": "2026-11-09",
+"date": "2026-11-09",
+"kind": "Hard climb (all-out)",
+"minutes": 59.6,
+"watts": 255.4,
+"pct_ftp": 100,
+"avg_hr": 181.1,
+"kj_before": 918
+},
+{
+"key": "2026-11-12 #1",
+"date": "2026-11-12",
+"kind": "Sweet spot (target 224-232 W)",
+"minutes": 14.7,
+"watts": 227.5,
+"pct_ftp": 89,
+"avg_hr": 166.5,
+"kj_before": 481
+},
+{
+"key": "2026-11-12 #2",
+"date": "2026-11-12",
+"kind": "Sweet spot (target 224-232 W)",
+"minutes": 15.4,
+"watts": 232.4,
+"pct_ftp": 91,
+"avg_hr": 166.4,
+"kj_before": 718
+},
+{
+"key": "2026-11-14",
+"date": "2026-11-14",
+"kind": "Hard climb (all-out)",
+"minutes": 12.1,
+"watts": 291.7,
+"pct_ftp": 114,
+"avg_hr": 189.4,
+"kj_before": 596
+}
+],
+"decoupling": [
+{
+"key": "2026-10-25",
+"date": "2026-10-25",
+"name": "MyWhoosh Al Qudra (2 h)",
+"minutes": 115,
+"w1": 175.1,
+"hr1": 147.8,
+"w2": 171.7,
+"hr2": 149.6,
+"ef1": 1.185,
+"ef2": 1.148,
+"decoupling": 3.1,
+"setting": "Indoor"
+},
+{
+"key": "2026-11-17",
+"date": "2026-11-17",
+"name": "MyWhoosh Z2 (ERG 150-155 W)",
+"minutes": 86,
+"w1": 154.8,
+"hr1": 140.7,
+"w2": 160.3,
+"hr2": 139.4,
+"ef1": 1.1,
+"ef2": 1.15,
+"decoupling": -4.5,
+"setting": "Indoor"
+},
+{
+"key": "2026-11-19",
+"date": "2026-11-19",
+"name": "MyWhoosh Z2",
+"minutes": 68,
+"w1": 160.4,
+"hr1": 145.9,
+"w2": 164.3,
+"hr2": 149.5,
+"ef1": 1.1,
+"ef2": 1.099,
+"decoupling": 0.0,
+"setting": "Indoor"
+}
+],
+"hr_zones_weekly": [
+{
+"week_start": "2026-10-19",
+"label": "19 Oct",
+"hours": 12.5,
+"low_pct": 64.9,
+"mod_pct": 28.7,
+"high_pct": 6.4,
+"low_min": 486,
+"mod_min": 215,
+"high_min": 48,
+"partial": false
+},
+{
+"week_start": "2026-10-26",
+"label": "26 Oct",
+"hours": 12.4,
+"low_pct": 69.1,
+"mod_pct": 26.4,
+"high_pct": 4.5,
+"low_min": 514,
+"mod_min": 196,
+"high_min": 34,
+"partial": false
+},
+{
+"week_start": "2026-11-02",
+"label": "2 Nov",
+"hours": 13.3,
+"low_pct": 58.0,
+"mod_pct": 36.6,
+"high_pct": 5.4,
+"low_min": 464,
+"mod_min": 293,
+"high_min": 43,
+"partial": false
+},
+{
+"week_start": "2026-11-09",
+"label": "9 Nov",
+"hours": 16.1,
+"low_pct": 66.0,
+"mod_pct": 22.5,
+"high_pct": 11.6,
+"low_min": 639,
+"mod_min": 218,
+"high_min": 112,
+"partial": false
+},
+{
+"week_start": "2026-11-16",
+"label": "16 Nov",
+"hours": 5.1,
+"low_pct": 90.8,
+"mod_pct": 8.8,
+"high_pct": 0.3,
+"low_min": 280,
+"mod_min": 27,
+"high_min": 1,
+"partial": true
+}
+],
+"weight": [
+{
+"key": "w1",
+"date": "2026-10-08",
+"weight_kg": 69,
+"source": "Project set-up",
+"note": "Weight given when the project started"
+},
+{
+"key": "w2",
+"date": "2026-10-15",
+"weight_kg": 68,
+"source": "You, in chat",
+"note": "Updated to 68 kg; all W/kg uses this"
+},
+{
+"key": "w3",
+"date": "2026-11-14",
+"weight_kg": null,
+"source": "You, in chat",
+"note": "Started creatine: expect +0.5 to 1.5 kg of water weight in 1 to 2 weeks"
+}
+],
+"goal_by_weight": [
+{
+"key": "67",
+"weight_kg": 67,
+"goal_w": 288,
+"ftp_wkg_now": 3.81,
+"gap_w": 33
+},
+{
+"key": "68",
+"weight_kg": 68,
+"goal_w": 292,
+"ftp_wkg_now": 3.75,
+"gap_w": 37
+},
+{
+"key": "69",
+"weight_kg": 69,
+"goal_w": 297,
+"ftp_wkg_now": 3.7,
+"gap_w": 42
+},
+{
+"key": "70",
+"weight_kg": 70,
+"goal_w": 301,
+"ftp_wkg_now": 3.64,
+"gap_w": 46
+}
+],
+"tests": [
+{
+"key": "t0",
+"date": "2026-10-09",
+"name": "Tanwang climb PR (outdoor)",
+"kind": "Done",
+"target": "",
+"predicted": "",
+"result": "20 min 266 W (Garmin) \u2192 FTP 255 W, 3.75 W/kg",
+"status": "done"
+},
+{
+"key": "t1",
+"date": "2026-12-03",
+"name": "Indoor 20-min test (window 30 Nov to 6 Dec)",
+"kind": "FTP test",
+"target": "268 W holds 255 W; 277 W gives 263 W",
+"predicted": "20 min about 275 W (268 to 282) \u2192 FTP about 261 W (255 to 268)",
+"result": "",
+"status": "planned"
+},
+{
+"key": "t2",
+"date": "2027-01-07",
+"name": "Indoor 20-min retest",
+"kind": "FTP test",
+"target": "Beat the 3 Dec result",
+"predicted": "Set after 3 Dec",
+"result": "",
+"status": "planned"
+},
+{
+"key": "t3",
+"date": "2027-04-24",
+"name": "Retest and Tanwang full gas (24 to 25 Apr)",
+"kind": "FTP test",
+"target": "About 4.1 to 4.2 W/kg",
+"predicted": "Set after January",
+"result": "",
+"status": "planned"
+},
+{
+"key": "t4",
+"date": "2027-06-12",
+"name": "Final test (12 to 13 Jun)",
+"kind": "Goal test",
+"target": "4.3 W/kg: about 292 W at 68 kg; Tanwang at 292 W \u2248 29 to 30 min",
+"predicted": "Realistic 4.0 to 4.2 W/kg",
+"result": "",
+"status": "planned"
+}
+],
+"elite_kpis": [
+{
+"metric": "pd5",
+"value": 327
+},
+{
+"metric": "pd5_wkg",
+"value": "4.81"
+},
+{
+"metric": "pd10",
+"value": 305
+},
+{
+"metric": "pd10_wkg",
+"value": "4.49"
+},
+{
+"metric": "pd20",
+"value": 266
+},
+{
+"metric": "pd20_wkg",
+"value": "3.91"
+},
+{
+"metric": "pd60",
+"value": 255
+},
+{
+"metric": "pd60_wkg",
+"value": "3.76"
+},
+{
+"metric": "ramp_last",
+"value": "+8.4"
+},
+{
+"metric": "ramp_last_lab",
+"value": "Week of 9 Nov"
+},
+{
+"metric": "tss_last",
+"value": 904
+},
+{
+"metric": "mono_last",
+"value": "1.24"
+},
+{
+"metric": "tss_cur",
+"value": 220
+},
+{
+"metric": "ctl_now",
+"value": 80
+},
+{
+"metric": "tsb_now",
+"value": "\u22122"
+},
+{
+"metric": "dur_kj",
+"value": 1026
+},
+{
+"metric": "dur_hard_kj",
+"value": 918
+},
+{
+"metric": "dec_latest",
+"value": "0.0"
+},
+{
+"metric": "low_last",
+"value": 66
+},
+{
+"metric": "mod_last",
+"value": 22
+},
+{
+"metric": "high_last",
+"value": 12
+},
+{
+"metric": "weight_now",
+"value": 68
+},
+{
+"metric": "goal68",
+"value": 292
+},
+{
+"metric": "goal69",
+"value": 297
+}
+],
+"notes": [
+{
+"key": "headline-1",
+"section": "headline",
+"title": "",
+"text": "Working FTP is 255 W (3.75 W/kg at 68 kg), set by the 9 Oct Tanwang PR and backed up by a 59-minute climb at 255 W on 9 Nov. New 5, 10 and 15-minute bests on 14 Nov (327, 305 and 272 W) show your aerobic ceiling rising. 4.3 W/kg (292 W) by June 2027 needs +37 W; 4.0 to 4.2 W/kg is the realistic range. After a roughly 900 TSS week (9 to 15 Nov), five lighter days have brought form back to about zero. Next check: the indoor 20-minute test around 3 Dec. Updated 20 Nov."
+},
+{
+"key": "takeaway-1",
+"section": "takeaway",
+"title": "Big volume, real endurance",
+"text": "145 rides, 10,166 km, 76,221 m and 384 hours since 3 January (outdoor rides only; indoor trainer sessions are not in these totals). That includes a 259 km day and weeks of up to 19 hours."
+},
+{
+"key": "takeaway-2",
+"section": "takeaway",
+"title": "Aerobic fitness and threshold are both improving",
+"text": "Power per heartbeat on steady rides rose from 1.01 to 1.17 (Mar\u2192Oct), and power at 150 bpm rose from 128 W to 156 W. October's efficiency slipped a little after the first half of the month because the late-October rides had higher heart rates. Your 9 Oct climb shows the top end has come up too: 266 W for 32 min against 240 W for 34 min in April."
+},
+{
+"key": "takeaway-3",
+"section": "takeaway",
+"title": "Working FTP: 255 W",
+"text": "All zones, training load and targets use FTP 255 W, which is 3.75 W/kg at 68 kg. The FTP comes from your Garmin 20-min (266 W) and 30-min (265 W) bests on 9 Oct. You set those while fatigued, so the true number may be a little higher."
+},
+{
+"key": "takeaway-4",
+"section": "takeaway",
+"title": "Too little structured hard work",
+"text": "By power, 73% of pedalling time is easy, 15% is tempo and 12% is hard. But the hard time is surges on climbs and group rides, not planned intervals. By heart rate, 34% of your time sits at 75\u201385% of max."
+},
+{
+"key": "takeaway-5",
+"section": "takeaway",
+"title": "Still fatigued: the recovery week ran over",
+"text": "The recovery week of 12\u201318 Oct ran over, and week 19\u201325 Oct was only 8.1 h outdoors (plus 3.5 h indoors that is not in these figures). Then 26 Oct\u20131 Nov came to 11.9 h and about 594 TSS: a clean 3\u00d712 sweet spot on 28 Oct (224\u2013227 W at heart rate 160\u2013164, against 173\u2013177 bpm for 228\u2013233 W on 22 Oct), then an unplanned 3:27 hard ride on 30 Oct, a rest day that became about 194 TSS with a 288 W finish at 190 bpm. WHOOP recovery fell from 92 on 29 Oct to 39 on 31 Oct, with resting HR +9, and was back to 57 by 1 Nov. Fitness is 69, fatigue 78 and form \u22124 (indoor rides excluded, so fitness is a little understated). Keep easy days under 165 W normalized and drop the kicks: two easy days in a row had a 600 W spike."
+},
+{
+"key": "takeaway-6",
+"section": "takeaway",
+"title": "The goal is within reach",
+"text": "At 68 kg, 4.3 W/kg is 292 W, so you need +14.5% from 255 W. A well-run structured block typically adds 8\u201312%, which is 275\u2013286 W (4.04\u20134.21 W/kg). If your Mar\u2192Oct rate (about 4.6 W a month) continues, you would reach about 292 W, exactly the target. The goal is within reach, but only with consistency and no long breaks."
+},
+{
+"key": "trend-1",
+"section": "trend",
+"title": "Fitness or just riding more?",
+"text": "Both are improving. Monthly hours peaked in Apr\u2013May (61 h) and collapsed in Jul\u2013Aug (18\u201324 h). Efficiency still rose in almost every month, which is real aerobic adaptation. The higher average power in Jul\u2013Aug comes from shorter, harder evening group rides. Most of your 2026 climbs were not all-out, so the monthly FTP estimates before October understate you. The 9 Oct PR is the first true maximal effort in the data."
+},
+{
+"key": "load-1",
+"section": "load",
+"title": "Load and consistency",
+"text": "Three red flags. First, a 54-day gap between rides (13 Jan \u2192 8 Mar), then a jump from 1.4 h to 12\u201316 h a week, so fitness (CTL) climbed about 10 points a week for three weeks. Second, Jul\u2013Aug averaged 4.4 h a week and fitness fell from 74 to 36 (\u221252%). Third, the September return repeated the steep ramp, peaking at +11 in the week to 11 Oct. Since then the ramps have been small (\u22121, \u22122, +3 in the last three weeks) and fitness is 69, close to the June peak of 74. Form is \u22124 on 1 Nov, after a week of 594 TSS with an unplanned hard day."
+},
+{
+"key": "intensity-1",
+"section": "intensity",
+"title": "Grey zone verdict",
+"text": "Not a classic grey-zone trap by power: most riding time is easy, helped by descents and coasting. What is missing is planned quality. Only 8% of pedalling time is at threshold or VO2max (Z4\u2013Z5), and none of it comes from intervals. Heart rate runs high for the power: a third of your time at 75\u201385% HRmax means easy days are not fully easy. Make easy days easier, under 191 W, and add 2 planned quality sessions a week."
+},
+{
+"key": "power-1",
+"section": "power",
+"title": "What the efforts say",
+"text": "Your measured best: 5 min 318 W (4.68 W/kg), 20 min 266 W (3.91 W/kg, Garmin), 30 min 265 W (3.90 W/kg, Garmin), all on 9 Oct. 20 and 30-min power are almost equal, which shows even pacing and good durability at threshold. The monthly estimates before October come from climbs that were not all-out, so they understate your FTP at the time."
+},
+{
+"key": "efficiency-1",
+"section": "efficiency",
+"title": "Aerobic efficiency",
+"text": "Same heart rate, more power. At 150 bpm you now produce about 156 W against 128 W in March (+21%). Efficiency factor on steady rides rose from 1.01 to 1.17 over the year, with a dip in late October when heart rates ran higher after a big week. It kept rising through the summer months, when heat usually pushes heart rate up, so the gain is likely real."
+},
+{
+"key": "climbs-1",
+"section": "climbs",
+"title": "Repeat climbs",
+"text": "Tanwang Rd (11.6 km, 4.5%): a new PR of 31:51 at 266 W on 9 Oct, 2:29 faster than April (34:20, 240 W). You negative-split it: 261 W, then 255 W, then 278 W over the last 11 minutes. Jietai Temple (4.8 km, 4.5%): 14:15 in March, 14:06 in June, and a PR of 13:55 (250 W measured) on 6 Oct. Both climbs PR\u2019d within four days in October."
+},
+{
+"key": "goal-1",
+"section": "goal",
+"title": "Gap to goal",
+"text": "At 68 kg, 4.3 W/kg is 292 W. From 255 W you need +37 W (+14.5%) in 8 months, or about 4.6 W a month. Using your monthly estimates, you gained about 4.6 W a month from March to October, and +10 W in your best month. With structured training, 275\u2013286 W (4.04\u20134.21 W/kg) by June is the realistic band, and 292 W is reachable if the block goes well. The keys are no long breaks (your two this year each cost about half your fitness) and 2 quality sessions a week. Keep weight stable rather than chasing it down: power is the main lever."
+},
+{
+"key": "strength-1",
+"section": "strength",
+"title": "Durable aerobic engine",
+"text": "384 h and 76 km of climbing YTD. You handle 5\u201310 h days and 12\u201319 h weeks. That base is what makes harder training possible."
+},
+{
+"key": "strength-2",
+"section": "strength",
+"title": "Aerobic efficiency is climbing",
+"text": "+16% power-per-heartbeat and +28 W at 150 bpm since March: the endurance work is paying off."
+},
+{
+"key": "strength-3",
+"section": "strength",
+"title": "Strong climbing and threshold durability",
+"text": "5-min 318 W (4.68 W/kg), Tanwang PR at 266 W for 32 min, and a Jietai PR at 250 W, all in October. You can go hard and hold it."
+},
+{
+"key": "limiter-1",
+"section": "limiter",
+"title": "No structured threshold work",
+"text": "Before 9 Oct your sustained power barely showed in the data, because almost no efforts were all-out and there are no structured threshold or sweet-spot sessions. You need regular quality work, not just big volume."
+},
+{
+"key": "limiter-2",
+"section": "limiter",
+"title": "Inconsistency",
+"text": "A 54-day break early in the year and a 10-week summer dip (4.4 h a week) cost about half your fitness each time. Over 8 months, consistency beats peak weeks."
+},
+{
+"key": "limiter-3",
+"section": "limiter",
+"title": "Load spikes and fatigue",
+"text": "Ramps of about +10 fitness points a week (March, September) and +11 in the week to 11 Oct. Late October was steadier (\u22121, \u22122, +3), but the 30 Oct rest day became a 194 TSS ride and WHOOP dropped to 39 two days later. That is how plateaus, illness and injury happen. Keep ramps \u2264 5 a week, make planned rest days actual rest days, and make recovery weeks about 60% of normal hours, nothing above Z2."
+},
+{
+"key": "data-1",
+"section": "data",
+"title": "February and mid-January",
+"text": "No rides between 13 Jan and 8 Mar. Only 6 rides (10 h) before the power meter, so Jan\u2013Feb heart rate comparisons are thin."
+},
+{
+"key": "data-2",
+"section": "data",
+"title": "January watts",
+"text": "Strava shows average watts for January rides, but those are Strava\u2019s estimates (no meter yet). They are excluded from all power figures."
+},
+{
+"key": "data-3",
+"section": "data",
+"title": "Missing heart rate",
+"text": "16 rides have no heart rate (23 May \u00d72, 1 Jul, 21\u201329 Aug, 6\u201315 Sep). They are left out of the heart-rate, efficiency and Relative Effort figures. Their load is power-based."
+},
+{
+"key": "data-4",
+"section": "data",
+"title": "Zones",
+"text": "Strava has no power zones set, and your heart-rate zones are Strava defaults. Power zones and training load use your working FTP of 255 W (Coggan zones), from the 9 Oct Garmin 20/30-min bests. Heart-rate zones use % of 201 bpm, the highest you recorded (24 May race)."
+},
+{
+"key": "data-5",
+"section": "data",
+"title": "Time in zone is sampled",
+"text": "The connector only provides downsampled streams. Zone shares come from a systematic sample of 18 rides (every 8th power ride plus 2 January rides) at about 100 points each, so they are accurate to roughly \u00b13\u20135 points."
+},
+{
+"key": "data-6",
+"section": "data",
+"title": "Best efforts",
+"text": "Measured efforts come from medium-resolution power streams on 5 rides (about 10\u201325 s per point; \u00b13\u20135%, and these slightly overstate peaks). The 9 Oct 20 and 30-min values come from your Garmin file and are the most accurate. Other climb powers are estimated from segment times with a physics model, calibrated against measured climbs (\u00b15%). Strava\u2019s segment list gives times only."
+},
+{
+"key": "data-7",
+"section": "data",
+"title": "Training load",
+"text": "Load (TSS) uses NP and FTP 255 W for every month. If your FTP was lower earlier in the year, early-season load is understated. January load was converted from Strava Relative Effort (\u00d70.92, fitted on rides that have both)."
+},
+{
+"key": "data-8",
+"section": "data",
+"title": "One suspicious ride",
+"text": "23 May (39.8 km): NP 223 W against a 133 W average, with no heart rate. That points to power spikes, so it is excluded from best-effort lists."
+},
+{
+"key": "data-9",
+"section": "data",
+"title": "Other assumptions",
+"text": "Weight is now 68 kg (updated 15 Oct), and all W/kg figures use it, including those for past efforts. 9 runs are excluded. The 25 Apr Tanwang time looks wind-assisted, so time comparisons on that climb use measured power where available."
+},
+{
+"key": "whoop-1",
+"section": "whoop",
+"title": "",
+"text": "Across 39 nights with sleep data (13 Oct to 20 Nov), the 19 mornings after a bedtime before 00:30 averaged 68% recovery, against 58% after later bedtimes. The last 14 nights averaged a 00:29 bedtime, 59% recovery and HRV 77.6 ms, down from 85.2 ms in the 14 nights before (24 Oct to 6 Nov) while resting HR stayed at 53. That HRV dip lines up with the 9 to 15 Nov load spike."
+},
+{
+"key": "retest-1",
+"section": "retest",
+"title": "",
+"text": "At your Mar to Oct pace of +4.6 W a month, the 255 W set on 9 Oct points to about 263 W (3.87 W/kg) by early December, and a fresh 20-min test would need about 277 W to confirm it. The 9 Oct 266 W for 20 min was set while fatigued, so a rested test could beat it. A result between 255 and 263 W is on track and above 263 W is ahead. Don't test at the end of a heavy week: a flat result then tells you about the week, not your fitness. The test will be done indoors and its result used as FTP, marked as indoor-set. There is no data yet on how your indoor and outdoor power compare, so a low result may reflect heat and the trainer and not fitness."
+},
+{
+"key": "data-10",
+"section": "data",
+"title": "WHOOP data",
+"text": "Recovery, HRV, resting heart rate and sleep come from WHOOP's structured summary (no raw sensor data). Recovery covers 8 Oct to 1 Nov and sleep covers 13 Oct to 1 Nov; naps are left out. Bedtime is when you went to bed, not when you fell asleep. The load shown for the day before is training load from power and includes the indoor rides on 24, 25 and 31 Oct (estimated from their normalised power); the weekly fitness chart still leaves those indoor rides out."
+},
+{
+"key": "sweet-1",
+"section": "sweetspot",
+"text": "Twelve of 13 efforts landed in the 224 to 240 W band; the exception is the 5-minute indoor block on 31 Oct. On 4 and 12 Nov you held 226 to 235 W at heart rate 161 to 167, close to 28 Oct (224 to 227 W at 160 to 164) and about 10 bpm lower than 22 Oct. Heart rate stayed flat from effort to effort in both November sessions. Next step: a clean 3\u00d715, then 3\u00d720.",
+"title": ""
+},
+{
+"key": "week-1",
+"section": "week",
+"text": "Rest days were kept, but from 2 to 15 Nov several rides ran longer or harder than planned (4, 5, 12, 14 and 15 Nov), and 8 of the 12 rides from 2 to 20 Nov had a kick over 500 W. The 16 to 20 Nov rides were mostly on plan: two indoor Z2 sessions close to target and a Z2 ride in place of the sweet spot.",
+"title": ""
+},
+{
+"key": "fitnote-1",
+"section": "fitnote",
+"text": "All rides, estimated from NP and moving time. The 9 to 15 Nov week (about 904 TSS) pushed fitness to 84 and fatigue to 117, so form fell to about \u221232, the deepest since early October. Five lighter days (about 220 TSS) cut fatigue to 81 while fitness held near 80, so form is back to about \u22121. Arrive at the 3 Dec test with form between 0 and +10.",
+"title": ""
+},
+{
+"key": "indoor-1",
+"section": "indoor",
+"text": "Seven indoor rides since 24 Oct add about 420 TSS. They count toward load but stay out of the power trend and efficiency charts, because trainer power reads differently from outdoors. The two Z2 sessions on 17 and 19 Nov (154 and 162 W at heart rate 139 and 147) line up with each other, which is what makes the decoupling check below usable.",
+"title": ""
+},
+{
+"key": "pd-1",
+"section": "power",
+"title": "Power-duration",
+"text": "Short and medium power jumped on 14 Nov: 5 min 327 W (4.81 W/kg) and 10 min 305 W (4.49 W/kg) are your best on record. Long power has moved less: 20 min is still 266 W from 9 Oct, and the 59-minute climb at 255 W on 9 Nov says your FTP sits close to 255. Your 60-minute power is 78% of your 5-minute power, inside the usual 75 to 85% range, so the profile is balanced and threshold is what has to rise for the goal. The dashed line is the same curve scaled to a 292 W FTP: an illustration of what 4.3 W/kg asks for at each duration, not a prediction."
+},
+{
+"key": "ramp-1",
+"section": "ramp",
+"title": "Ramp and stress",
+"text": "Weekly load rose from 562 to 668 TSS between 19 Oct and 8 Nov, then jumped to about 904 TSS in the week of 9 Nov: a fitness ramp of +8.4 points, above the 5 to 7 points a week that is usually sustainable. The same happened in the week of 5 Oct (931 TSS, +11), and WHOOP dipped to 44% on 10 Oct. After the November spike recovery fell to 41% on 15 Nov. Monotony stayed low (about 1.0 to 1.3), so the problem is total load in one week, not too many similar days. Keep build weeks at 350 to 420 TSS until the January test."
+},
+{
+"key": "dur-1",
+"section": "durability",
+"title": "Durability",
+"text": "The best sign of durability so far: on 9 Nov you held 255 W for 59 minutes after 918 kJ of riding, at heart rate 181. On 4 Nov your third sweet-spot effort, after 1,026 kJ, was still in band (226 W) at a lower heart rate than the first. These are lap averages, so the numbers are exact, but none comes after 1,500 to 2,000 kJ, which is where durability is usually judged. To measure it: on a 4-hour ride, do a 20-minute effort after about 2,000 kJ (roughly 3.5 h at 160 W) and compare it with your fresh 20-minute power."
+},
+{
+"key": "dec-1",
+"section": "decoupling",
+"title": "Aerobic decoupling",
+"text": "On three steady indoor rides, power-to-heart-rate drift from the first half to the second was 3.1% (25 Oct, 2 h), \u22124.5% (17 Nov) and 0.0% (19 Nov). Under 5% means your aerobic base handles these durations well. On 17 Nov power rose in the second half while heart rate stayed flat, which is why the figure is negative. These come from 100-point samples, so treat them as \u00b12%. Outdoor rides are left out because stops and terrain make the halves too uneven to compare."
+},
+{
+"key": "hrz-1",
+"section": "hrzones",
+"title": "Intensity by heart rate",
+"text": "By heart rate (WHOOP zones, % of max HR, stopped time left out), your build weeks spent 22 to 37% of riding time in the grey zone (70 to 80% of max, roughly 141 to 160 bpm). The week of 2 Nov was the worst at 37%, mostly from long rides ridden at tempo. An 80/20 week has about 80% low, under 10% grey and 10 to 20% hard. The week of 9 Nov had the most hard time (12%) but still 23% grey. This week so far is 91% low, which is right for a recovery week."
+},
+{
+"key": "read-1",
+"section": "readiness",
+"title": "Readiness",
+"text": "HRV and resting heart rate are the early warning. During the 9 to 15 Nov spike, HRV fell to 63 to 65 ms on three mornings (10, 13 and 15 Nov) and resting HR rose to 57 to 58. After Monday's rest day both were back at baseline on 17 Nov (HRV 93 ms, resting HR 48). Rule: HRV down 15% or more, or resting HR up 5 or more, means that day's session gets cut."
+},
+{
+"key": "wkg-1",
+"section": "wkg",
+"title": "Weight",
+"text": "All W/kg figures use 68 kg. You started creatine on 14 Nov, which typically adds 0.5 to 1.5 kg of water weight in one to two weeks. That changes W/kg, not watts: at 69 kg the 4.3 W/kg goal is 297 W instead of 292 W. Weigh yourself on test mornings, before eating, and send me the number so I can update this table."
+},
+{
+"key": "tests-1",
+"section": "tests",
+"title": "Tests",
+"text": "The 3 Dec test goes ahead only with WHOOP at 66% or more and resting HR within 3 bpm of baseline; otherwise it moves inside the window or one week later. Prediction: 20 minutes at about 275 W (268 to 282), so FTP about 261 W (255 to 268). The January test is a check on the winter block, and April and June are the real progress tests."
+},
+{
+"key": "data-11",
+"section": "data",
+"title": "New sections, 20 Nov",
+"text": "Durability uses Strava lap averages and the work done before each lap (lap average power \u00d7 lap time), so it covers only efforts recorded as laps. Decoupling uses 100-point downsampled streams of three indoor rides (\u00b12%). Heart-rate zones come from WHOOP's own zone times for cycling workouts and use WHOOP's max HR, not your Strava zones. The power curve mixes Strava best efforts, Garmin bests and lap averages; the 1-minute value is a lower bound."
+},
+{
+"key": "data-12",
+"section": "data",
+"title": "Load and weight",
+"text": "Daily load now runs to 20 Nov and includes all rides, indoor ones too. The Load section and its weekly fitness chart still use outdoor rides only, so their numbers are lower than the fitness chart. Weight is still 68 kg for every W/kg figure."
+}
+],
+"efforts": [
+{
+"key": "2026-03-20 5 min",
+"month": "Mar",
+"date": "2026-03-20",
+"duration": "5 min",
+"seconds": 300,
+"watts": 240,
+"wkg": 3.53,
+"method": "Measured (power stream)",
+"note": ""
+},
+{
+"key": "2026-04-25 5 min",
+"month": "Apr",
+"date": "2026-04-25",
+"duration": "5 min",
+"seconds": 300,
+"watts": 270,
+"wkg": 3.97,
+"method": "Measured (power stream)",
+"note": ""
+},
+{
+"key": "2026-09-15 5 min",
+"month": "Sep",
+"date": "2026-09-15",
+"duration": "5 min",
+"seconds": 300,
+"watts": 276,
+"wkg": 4.06,
+"method": "Measured (power stream)",
+"note": ""
+},
+{
+"key": "2026-10-06 5 min",
+"month": "Oct",
+"date": "2026-10-06",
+"duration": "5 min",
+"seconds": 300,
+"watts": 274,
+"wkg": 4.02,
+"method": "Measured (power stream)",
+"note": ""
+},
+{
+"key": "2026-10-09 5 min",
+"month": "Oct",
+"date": "2026-10-09",
+"duration": "5 min",
+"seconds": 300,
+"watts": 318,
+"wkg": 4.68,
+"method": "Measured (power stream)",
+"note": "Tanwang PR day"
+},
+{
+"key": "2026-10-09 20 min",
+"month": "Oct",
+"date": "2026-10-09",
+"duration": "20 min",
+"seconds": 1200,
+"watts": 266,
+"wkg": 3.91,
+"method": "Measured (Garmin file)",
+"note": "Tanwang PR, Garmin 20-min best"
+},
+{
+"key": "2026-10-09 30 min",
+"month": "Oct",
+"date": "2026-10-09",
+"duration": "30 min",
+"seconds": 1800,
+"watts": 265,
+"wkg": 3.9,
+"method": "Measured (Garmin file)",
+"note": "Tanwang PR, Garmin 30-min best"
+},
+{
+"key": "2026-10-09 32 min",
+"month": "Oct",
+"date": "2026-10-09",
+"duration": "32 min",
+"seconds": 1911,
+"watts": 266,
+"wkg": 3.91,
+"method": "Measured (power stream)",
+"note": "Tanwang 31:51, PR by 2:29"
+},
+{
+"key": "2026-03-28 ~14 min",
+"month": "Mar",
+"date": "2026-03-28",
+"duration": "~14 min",
+"seconds": 855,
+"watts": 247,
+"wkg": 3.63,
+"method": "Estimated from climb time",
+"note": "Jietai 14:15"
+},
+{
+"key": "2026-05-24 ~13 min",
+"month": "May",
+"date": "2026-05-24",
+"duration": "~13 min",
+"seconds": 768,
+"watts": 231,
+"wkg": 3.39,
+"method": "Lower bound (whole-ride average)",
+"note": "Race, DNF; whole-activity average"
+},
+{
+"key": "2026-06-09 ~14 min",
+"month": "Jun",
+"date": "2026-06-09",
+"duration": "~14 min",
+"seconds": 846,
+"watts": 250,
+"wkg": 3.68,
+"method": "Estimated from climb time",
+"note": "Jietai 14:06"
+},
+{
+"key": "2026-10-06 ~14 min",
+"month": "Oct",
+"date": "2026-10-06",
+"duration": "~14 min",
+"seconds": 835,
+"watts": 250,
+"wkg": 3.68,
+"method": "Measured (power stream)",
+"note": "Jietai 13:55, PR"
+},
+{
+"key": "2026-03-20 20 min",
+"month": "Mar",
+"date": "2026-03-20",
+"duration": "20 min",
+"seconds": 1200,
+"watts": 201,
+"wkg": 2.96,
+"method": "Measured (power stream)",
+"note": "On Tanwang climb"
+},
+{
+"key": "2026-04-25 20 min",
+"month": "Apr",
+"date": "2026-04-25",
+"duration": "20 min",
+"seconds": 1200,
+"watts": 244,
+"wkg": 3.59,
+"method": "Measured (power stream)",
+"note": "On Tanwang climb"
+},
+{
+"key": "2026-09-15 20 min",
+"month": "Sep",
+"date": "2026-09-15",
+"duration": "20 min",
+"seconds": 1200,
+"watts": 229,
+"wkg": 3.37,
+"method": "Measured (power stream)",
+"note": "On Tanwang climb"
+},
+{
+"key": "2026-10-06 20 min",
+"month": "Oct",
+"date": "2026-10-06",
+"duration": "20 min",
+"seconds": 1200,
+"watts": 220,
+"wkg": 3.23,
+"method": "Measured (power stream)",
+"note": "Second climb of the day"
+},
+{
+"key": "2026-04-25 34 min",
+"month": "Apr",
+"date": "2026-04-25",
+"duration": "34 min",
+"seconds": 2060,
+"watts": 240,
+"wkg": 3.53,
+"method": "Measured (power stream)",
+"note": "Tanwang 34:20, best time"
+},
+{
+"key": "2026-06-27 39 min",
+"month": "Jun",
+"date": "2026-06-27",
+"duration": "39 min",
+"seconds": 2357,
+"watts": 211,
+"wkg": 3.1,
+"method": "Estimated from climb time",
+"note": "Tanwang 39:17"
+},
+{
+"key": "2026-09-15 39 min",
+"month": "Sep",
+"date": "2026-09-15",
+"duration": "39 min",
+"seconds": 2327,
+"watts": 213,
+"wkg": 3.13,
+"method": "Measured (power stream)",
+"note": "Tanwang 38:47"
+},
+{
+"key": "2026-08-04 41 min",
+"month": "Aug",
+"date": "2026-08-04",
+"duration": "41 min",
+"seconds": 2456,
+"watts": 192,
+"wkg": 2.83,
+"method": "Lower bound (whole-ride average)",
+"note": "Evening ride, NP 228, avg HR 181"
+},
+{
+"key": "2026-07-09 87 min",
+"month": "Jul",
+"date": "2026-07-09",
+"duration": "87 min",
+"seconds": 5216,
+"watts": 184,
+"wkg": 2.7,
+"method": "Lower bound (whole-ride average)",
+"note": "Evening ride, NP 223, avg HR 176"
+}
+],
+"ftp": [
+{
+"month": "2026-03",
+"label": "Mar",
+"ftp_est": 223,
+"low": 215,
+"high": 230,
+"wkg": 3.28,
+"basis": "14-min climb \u2248247 W (est.) \u00d7 0.92; measured 20-min 201 W was not all-out"
+},
+{
+"month": "2026-04",
+"label": "Apr",
+"ftp_est": 233,
+"low": 228,
+"high": 238,
+"wkg": 3.43,
+"basis": "Measured 34-min climb 240 W and 20-min 244 W \u00d7 0.95"
+},
+{
+"month": "2026-05",
+"label": "May",
+"ftp_est": null,
+"low": 212,
+"high": null,
+"wkg": null,
+"basis": "Only a lower bound: 13-min race average 231 W \u00d7 0.92"
+},
+{
+"month": "2026-06",
+"label": "Jun",
+"ftp_est": 226,
+"low": 218,
+"high": 232,
+"wkg": 3.32,
+"basis": "14-min climb \u2248250 W (est.) \u00d7 0.92 (wide range)"
+},
+{
+"month": "2026-07",
+"label": "Jul",
+"ftp_est": 228,
+"low": 220,
+"high": 235,
+"wkg": 3.35,
+"basis": "Indirect: 87-min ride at NP 223 W, avg HR 176"
+},
+{
+"month": "2026-08",
+"label": "Aug",
+"ftp_est": 222,
+"low": 215,
+"high": 230,
+"wkg": 3.26,
+"basis": "Indirect: 41-min ride at NP 228 W"
+},
+{
+"month": "2026-09",
+"label": "Sep",
+"ftp_est": 218,
+"low": 212,
+"high": 225,
+"wkg": 3.21,
+"basis": "Measured 20-min 229 W \u00d7 0.95"
+},
+{
+"month": "2026-10",
+"label": "Oct",
+"ftp_est": 255,
+"low": 252,
+"high": 258,
+"wkg": 3.75,
+"basis": "9 Oct Tanwang PR: Garmin 20-min 266 W and 30-min 265 W, all-out while fatigued"
+}
+]
+}

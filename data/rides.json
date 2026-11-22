@@ -1,0 +1,28 @@
+[
+ {
+  "date": "2026-11-21",
+  "strava_id": 21066079021,
+  "name": "Morning Ride",
+  "indoor": false,
+  "moving_h": 3.414,
+  "np": 165,
+  "avg_w": 151.8,
+  "avg_hr": 140.2,
+  "max_hr": 172,
+  "max_w": 928,
+  "km": 91.56
+ },
+ {
+  "date": "2026-11-22",
+  "strava_id": 21081657878,
+  "name": "MyWhoosh - City Reef Park",
+  "indoor": true,
+  "moving_h": 2.012,
+  "np": 156,
+  "avg_w": 154.4,
+  "avg_hr": 142.6,
+  "max_hr": 154,
+  "max_w": 215,
+  "km": 57.82
+ }
+]
