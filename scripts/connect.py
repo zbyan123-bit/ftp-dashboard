@@ -13,6 +13,10 @@ REDIRECT = 'https://zbyan123-bit.github.io/ftp-dashboard/callback.html'
 
 def main():
     service, code = sys.argv[1].strip().lower(), sys.argv[2].strip()
+    need = ['TOKEN_KEY'] + (['STRAVA_CLIENT_ID', 'STRAVA_CLIENT_SECRET'] if service == 'strava' else ['WHOOP_CLIENT_ID', 'WHOOP_CLIENT_SECRET'])
+    missing = [n for n in need if not os.environ.get(n, '').strip()]
+    if missing:
+        sys.exit('Missing GitHub secrets: ' + ', '.join(missing) + '. Add them under Settings → Secrets and variables → Actions → Repository secrets.')
     tok = load_tokens()
     if service == 'strava':
         r = http('POST', 'https://www.strava.com/oauth/token', {
