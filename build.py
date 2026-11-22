@@ -157,6 +157,12 @@ def week_panel():
             ''.join(rows) + '<div class="t-foot">Tap a day for the full session and WHOOP rules.</div></div>')
 
 data = dict(static)
+try:
+    ss_extra = load('sweet_spot_extra.json')
+except FileNotFoundError:
+    ss_extra = []
+have = {r['key'] for r in data.get('sweet_spot', [])}
+data['sweet_spot'] = data.get('sweet_spot', []) + [r for r in ss_extra if r['key'] not in have]
 data.update(fitness_daily=fd, whoop=whoop, week=week)
 
 ad = D(asof)

@@ -14,6 +14,10 @@ Netlify publishes the repository root on every push. There is no build step on N
    - Append to `data/rides.json`:
      `{"date","strava_id","name","indoor" (true for VirtualRide),"moving_h","np","avg_w","avg_hr","max_hr","max_w","km"}`
    - Do not add a ride that has no power data; note it in the check-in instead.
+   - **Sweet-spot efforts:** call `get-activity-laps` for each new ride. Every lap of 8–40 min
+     with average power 215–250 W is a sweet-spot effort. Append one row per effort to
+     `data/sweet_spot_extra.json`:
+     `{"key": "YYYY-MM-DD #n","date","session": "Planned session, outdoor" (or "Planned session, indoor"; "Unplanned, outdoor" if the plan had no sweet spot that day),"effort": n,"minutes","avg_w","avg_hr","max_hr","terrain": "Climb" if the lap gained ≥ 60 m else "Flat","in_band": 224 <= avg_w <= 240}`
 2. **WHOOP.** Use the structured daily summary (timezone Asia/Singapore), plus `whoop_list_sleeps`
    in structured mode for in-bed and awake milliseconds. Append one row per new morning
    to `data/whoop.json`:

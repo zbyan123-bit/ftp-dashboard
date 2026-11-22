@@ -125,6 +125,17 @@ window.addEventListener('load',()=>setTimeout(()=>{
  if(kpi){const k=document.createElement('div');k.className='grp';k.textContent='Goal';kpi.before(k);}
 },350));
 </script>
+<style>
+@media (prefers-color-scheme: dark){
+ :root{--color-fg:#e8e8e6;--color-fg-muted:#a6a6a2;--color-panel:#1e1f22;--color-border-line:#34363b;--color-ok:#4cc277;--color-warn:#e0a83a;--color-bad:#f06a6a;
+  --cds-chart-reference:#7c7f86;--cds-chart-grid:#2c2e33;--cds-chart-axis:#55585e;--cds-chart-status-critical:#f06a6a;--cds-surface-popover:#26282c;--cds-border:#3a3c41;color-scheme:dark}
+ body{background:#121316!important;color:var(--color-fg)}
+ .fd .jump{background:#121316!important}
+ .today .wd.cur .dd,.today .wd.cur .dt,.today .wc.next{color:#6aa8ff!important}
+ .today .wc.key{color:#b88cff!important}
+ .wk-more{color:var(--color-fg)}
+}
+</style>
 </head><body><div id="dash-root">__TODAY__<style>
 #dash-root { --dash-gutter: clamp(16px, 3vw, 40px); }
 .fd { max-width: 1180px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); position: relative; display: flex; flex-direction: column; gap: var(--cds-gap-xl); padding-block: var(--cds-pad-md) var(--cds-pad-xl); }

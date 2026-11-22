@@ -1,0 +1,26 @@
+[
+ {
+  "key": "2026-11-21 #1",
+  "date": "2026-11-21",
+  "session": "Planned session, outdoor",
+  "effort": 1,
+  "minutes": 15.0,
+  "avg_w": 229.8,
+  "avg_hr": 162.1,
+  "max_hr": 169,
+  "terrain": "Climb",
+  "in_band": true
+ },
+ {
+  "key": "2026-11-21 #2",
+  "date": "2026-11-21",
+  "session": "Planned session, outdoor",
+  "effort": 2,
+  "minutes": 16.0,
+  "avg_w": 230.8,
+  "avg_hr": 162.2,
+  "max_hr": 172,
+  "terrain": "Climb",
+  "in_band": true
+ }
+]
