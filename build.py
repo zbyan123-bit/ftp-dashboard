@@ -117,6 +117,45 @@ def today_panel():
     parts.append('<div class="t-foot">TSS and form are estimates from normalized power. Sections below the summary marked 20 Nov are snapshots. On a phone, tap a section title to open it.</div>')
     return '<div class="today">' + ''.join(parts) + '</div>'
 
+def week_panel():
+    """Mon–Sun plan for the week that holds the next planned day."""
+    try:
+        notes = load('week_notes.json')
+    except FileNotFoundError:
+        notes = {}
+    nxt = next((r for r in week if r['status'] == 'upcoming' and r['date'] >= asof), None)
+    ref = D(nxt['date']) if nxt else D(asof)
+    mon = ref - dt.timedelta(ref.weekday())
+    days = [(mon + dt.timedelta(i)).isoformat() for i in range(7)]
+    byd = {r['date']: r for r in week}
+    if not any(d in byd for d in days):
+        return ''
+    rows = []
+    for d in days:
+        r = byd.get(d)
+        if not r:
+            rows.append(f'<details class="wd"><summary><span class="dd">{D(d):%a} {D(d).day}</span><span class="dt">No plan yet</span></summary></details>')
+            continue
+        st = r['status']
+        title = r.get('short') or r['plan'].split(' (')[0].split('. ')[0]
+        if st == 'upcoming':
+            chip = '<span class="wc next">today</span>' if d == asof else ('<span class="wc next">next</span>' if nxt and d == nxt['date'] else '')
+            if r['type'] == 'rest': chip = '<span class="wc rest">rest</span>'
+            elif not chip and any(k in title.lower() for k in ('sweet spot', 'threshold', 'vo2', 'ftp test', 'ftp retest')):
+                chip = '<span class="wc key">key session</span>'
+        else:
+            cls = {'on plan': 'ok', 'off plan': 'warn', 'rest ridden': 'bad', 'skipped': 'warn'}.get(st, 'ok')
+            chip = f'<span class="wc {cls}">{_h.escape(st)}</span>'
+        done = f'<div class="wa">Ridden: {_h.escape(r["actual"])}{" · " + str(r["tss"]) + " TSS" if r.get("tss") else ""}{" · " + _h.escape(r["flags"]) if r.get("flags") else ""}</div>' if st != 'upcoming' else ''
+        cur = ' cur' if nxt and d == nxt['date'] else ''
+        dl = f'{D(d):%a} {D(d).day}'
+        rows.append(f'<details class="wd{cur}"{" open" if cur else ""}><summary><span class="dd">{dl}</span><span class="dt">{_h.escape(title)}</span>{chip}</summary>'
+                    f'<div class="wp">{_h.escape(r["plan"])}</div>{done}</details>')
+    note = notes.get(days[0], '')
+    head = f'<div class="t-h"><b>This week’s plan</b><span>{D(days[0]).day} {D(days[0]):%b} – {D(days[6]).day} {D(days[6]):%b}</span></div>'
+    return ('<div class="today wk">' + head + (f'<div class="wn">{_h.escape(note)}</div>' if note else '') +
+            ''.join(rows) + '<div class="t-foot">Tap a day for the full session and WHOOP rules.</div></div>')
+
 data = dict(static)
 data.update(fitness_daily=fd, whoop=whoop, week=week)
 
@@ -125,7 +164,7 @@ asof_s = f'{ad.day} {ad:%b}'
 asof_l = f'{ad.day} {ad:%B %Y}'
 html = (ROOT / 'template.html').read_text(encoding='utf-8')
 html = html.replace('__DATA__', json.dumps(data, ensure_ascii=False).replace('</', '<\\/'))
-html = html.replace('__TODAY__', today_panel())
+html = html.replace('__TODAY__', today_panel() + week_panel())
 html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 last = fd[-1]

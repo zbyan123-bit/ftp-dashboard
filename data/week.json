@@ -537,7 +537,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Z2 endurance, up to 3 h"
  },
  {
   "date": "2026-11-24",
@@ -552,7 +553,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Sweet spot 2×15 min"
  },
  {
   "date": "2026-11-25",
@@ -567,7 +569,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Off (no riding Wednesdays)"
  },
  {
   "date": "2026-11-26",
@@ -582,7 +585,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Z2 endurance, 1.5 h"
  },
  {
   "date": "2026-11-27",
@@ -597,7 +601,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Rest or 45 min easy spin"
  },
  {
   "date": "2026-11-28",
@@ -612,7 +617,8 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Long Z2, 2–2.5 h"
  },
  {
   "date": "2026-11-29",
@@ -627,6 +633,7 @@
   "tss": null,
   "actual": "",
   "flags": "",
-  "status": "upcoming"
+  "status": "upcoming",
+  "short": "Group ride, 2 h max"
  }
 ]

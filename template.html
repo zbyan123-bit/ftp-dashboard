@@ -19,6 +19,20 @@ window.addEventListener('load',()=>{ handlers.forEach(h=>{try{h()}catch(e){conso
 .today .t-c .s{font-size:12px;color:var(--color-fg-muted)}
 .today .ok{color:var(--color-ok)}.today .warn{color:var(--color-warn)}.today .bad{color:var(--color-bad)}
 .today .t-n{font-size:14px;line-height:1.4}.today .t-n b{display:block;font-size:12px;color:var(--color-fg-muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.today.wk{gap:6px}
+.today .wn{font-size:13.5px;color:var(--color-fg-muted);line-height:1.45;margin-bottom:4px}
+.today .wd{border-top:1px solid var(--color-border-line)}
+.today .wd summary{list-style:none;display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer}
+.today .wd summary::-webkit-details-marker{display:none}
+.today .wd .dd{flex:0 0 64px;font-weight:600;font-size:14px}
+.today .wd .dt{flex:1;font-size:15px;min-width:0}
+.today .wd.cur .dd,.today .wd.cur .dt{color:#1d5fb8}
+.today .wc{flex:0 0 auto;font-size:12px;border:1px solid currentColor;border-radius:999px;padding:1px 8px;white-space:nowrap}
+.today .wc.ok{color:var(--color-ok)}.today .wc.warn{color:var(--color-warn)}.today .wc.bad{color:var(--color-bad)}
+.today .wc.next{color:#1d5fb8}.today .wc.key{color:#8a3fd1}.today .wc.rest{color:var(--color-fg-muted)}
+.today .wp,.today .wa{font-size:14px;line-height:1.5;padding:0 0 8px 74px;color:var(--color-fg)}
+.today .wa{color:var(--color-fg-muted)}
+@media (max-width:640px){.today .wp,.today .wa{padding-left:0}.today .wd .dd{flex-basis:74px}}
 .today .t-foot{font-size:11px;color:var(--color-fg-muted)}
 @media (max-width:640px){
  body{padding:0 12px!important}

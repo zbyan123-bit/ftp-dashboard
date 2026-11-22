@@ -20,8 +20,11 @@ Netlify publishes the repository root on every push. There is no build step on N
    `{"date" (wake date, local),"recovery","rhr","hrv","bedtime" ("HH:MM" local),"bed_h" (hours after midnight, negative before midnight),"asleep_h" ((in_bed - awake)/3.6e6),"sleep_perf","consistency"}`
    Leave `load_day_before` out; `build.py` fills it.
 3. **Plan.** If the coach changes the plan, edit or add rows in `data/week.json`
-   (`date, dow, type ("ride"|"rest"), plan, planned_h_max, indoor`, other fields null/"" and
-   `status: "upcoming"`). Actuals for dates after 20 Nov are filled by `build.py` from rides.
+   (`date, dow, type ("ride"|"rest"), short (a 2–5 word title), plan, planned_h_max, indoor`,
+   other fields null/"" and `status: "upcoming"`). Actuals for dates after 20 Nov are filled by
+   `build.py` from rides. The "This week's plan" card shows the Mon–Sun week holding the next
+   planned day; when a new week starts and it has no rows yet, add that week's 7 rows from the
+   training plan, and a one-line summary keyed by its Monday in `data/week_notes.json`.
 4. Run `python3 build.py`. It prints CTL, ATL and TSB. It must finish without errors.
 5. Commit `data/` and `index.html` with message `Daily update YYYY-MM-DD` and push to `main`.
 
