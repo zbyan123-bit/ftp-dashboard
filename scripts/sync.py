@@ -45,7 +45,8 @@ def save_tokens(tok):
 # ---------- http ----------
 def http(method, url, data=None, headers=None):
     body = None
-    h = dict(headers or {})
+    h = {'User-Agent': 'ftp-dashboard/1.0 (personal training dashboard)', 'Accept': 'application/json'}
+    h.update(headers or {})
     if data is not None:
         body = urllib.parse.urlencode(data).encode()
         h['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -58,11 +59,12 @@ def http(method, url, data=None, headers=None):
             if e.code in (429, 500, 502, 503, 504) and attempt < 2:
                 time.sleep(5 * (attempt + 1))
                 continue
+            raw = e.read() or b''
             try:
-                detail = json.loads(e.read() or b'{}')
+                detail = json.loads(raw or b'{}')
                 detail = {k: detail[k] for k in ('message', 'error', 'error_description', 'errors') if k in detail}
             except Exception:
-                detail = {}
+                detail = {'body': raw[:120].decode('utf-8', 'replace')}
             raise RuntimeError(f'{method} {url.split("?")[0]} -> HTTP {e.code} {json.dumps(detail)[:300]}') from None
 
 
