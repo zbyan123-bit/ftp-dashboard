@@ -15,6 +15,14 @@ load = lambda f: json.loads((ROOT / 'data' / f).read_text(encoding='utf-8'))
 static = load('static.json')
 base = load('fitness_base.json')
 rides = sorted(load('rides.json'), key=lambda r: r['date'])
+try:  # prefer NP from the full 1-second power data (ride_metrics.json) when the sync job has it
+    _met = load('ride_metrics.json')
+    for _r in rides:
+        _m = _met.get(str(_r.get('strava_id')))
+        if _m and _m.get('np'):
+            _r['np'] = _m['np']
+except FileNotFoundError:
+    pass
 whoop = sorted(load('whoop.json'), key=lambda r: r['date'])
 week = sorted(load('week.json'), key=lambda r: r['date'])
 

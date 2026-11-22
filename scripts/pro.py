@@ -86,7 +86,7 @@ def curve_svg(series, ftp, goal):
     for d in ds:
         o.append(f'<text x="{lx(d):.1f}" y="{Hh-12}" text-anchor="middle" class="ax">{LABEL.get(d, d)}</text>')
     for val, cls, lab in ((ftp, 'ref', f'FTP {ftp} W'), (goal, 'goal', f'Goal {goal} W')):
-        o.append(f'<line x1="{l}" x2="{W-r}" y1="{sy(val):.1f}" y2="{sy(val):.1f}" class="{cls}"/><text x="{W-r-4}" y="{sy(val)-5:.1f}" text-anchor="end" class="ax">{lab}</text>')
+        o.append(f'<line x1="{l}" x2="{W-r}" y1="{sy(val):.1f}" y2="{sy(val):.1f}" class="{cls}"/><text x="{l+6}" y="{sy(val)+(-5 if cls == "goal" else 14):.1f}" class="ax">{lab}</text>')
     for s in series:
         pts = sorted(s['pts'])
         if len(pts) < 2:
@@ -247,7 +247,7 @@ def build(rides_m, whoop, static_curve, ftp, kg, asof, week_rows):
     rating = 'Superior' if ftp_wkg >= 5.05 else 'Excellent' if ftp_wkg >= 3.93 else 'Good' if ftp_wkg >= 2.79 else 'Fair' if ftp_wkg >= 2.23 else 'Untrained'
     prof = [dict(label='5 s', w=bestw(5), wkg=bestw(5) / kg), dict(label='1 min', w=bestw(60), wkg=bestw(60) / kg),
             dict(label='5 min', w=bestw(300), wkg=bestw(300) / kg),
-            dict(label='FTP', w=ftp, wkg=ftp_wkg, note=f'{rating} (Garmin scale) · goal {4.3:.1f}')]
+            dict(label='FTP', w=ftp, wkg=ftp_wkg, note=f'{rating} (Garmin scale)' + (f' · Excellent from {round(3.93*kg)} W' if ftp_wkg < 3.93 else '') + ' · goal 4.3')]
     prof = [p for p in prof if p['w']]
 
     # ---- assemble
