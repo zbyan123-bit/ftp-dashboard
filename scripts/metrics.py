@@ -7,6 +7,7 @@ import numpy as np
 
 DURS = [1, 5, 10, 15, 30, 60, 120, 180, 300, 480, 600, 720, 900, 1200, 1800, 2400, 3600, 5400]
 GAP = 3  # seconds; longer recording gaps are treated as stopped
+VERSION = 2  # bump to make the sync job re-analyse every ride
 
 
 def series(t, w, hr=None):
@@ -79,7 +80,23 @@ def decoupling(mv, hrm):
     return round(float((e1 - e2) / e1 * 100), 1)
 
 
+def despike(w):
+    """Drop single-sample power-meter glitches: a sample over 2,000 W, or over 500 W and more than
+    40% above the highest of the 2 samples either side. Real sprints build over several seconds."""
+    w = np.nan_to_num(np.asarray(w, dtype=float)).copy()
+    n = len(w); fixed = 0
+    for i in range(n):
+        nb = np.concatenate([w[max(0, i - 2):i], w[i + 1:i + 3]])
+        if not len(nb):
+            continue
+        m = float(np.max(nb))
+        if w[i] > 2000 or (w[i] > 500 and w[i] > 1.4 * m):
+            w[i] = m; fixed += 1
+    return w, fixed
+
+
 def ride_metrics(t, w, hr, ftp):
+    w, spikes = despike(w)
     el, mv, hrm = series(t, w, hr)
     if len(mv) < 300:
         return None
@@ -91,7 +108,8 @@ def ride_metrics(t, w, hr, ftp):
     out = dict(moving_s=int(len(mv)), np=round(npw), avg_w=round(avg, 1), IF=round(IF, 3),
                VI=round(vi, 3) if vi else None, kj=round(kj), carbs_g=carbs_g(kj, IF),
                tss=round(len(mv) / 3600 * IF ** 2 * 100), zones=zones(mv, ftp), mmp=mmp(el),
-               avg_hr=round(float(np.nanmean(hrm)), 1) if hr is not None and np.isfinite(hrm).any() else None)
+               avg_hr=round(float(np.nanmean(hrm)), 1) if hr is not None and np.isfinite(hrm).any() else None,
+               spikes_removed=spikes, v=VERSION)
     steady = len(mv) >= 3600 and vi is not None and vi <= 1.15 and IF <= 0.85
     out['decoupling'] = decoupling(mv, hrm) if (steady and hr is not None) else None
     return out

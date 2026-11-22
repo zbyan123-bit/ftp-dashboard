@@ -241,7 +241,7 @@ def strava_metrics(tok, changed, limit=30):
             break
     todo = [a for a in sorted(acts, key=lambda a: a['start_date_local'], reverse=True)
             if a.get('sport_type', a.get('type')) in ('Ride', 'VirtualRide') and a.get('device_watts')
-            and str(a['id']) not in store]
+            and store.get(str(a['id']), {}).get('v', 1) < M.VERSION]
     ftp = ftp_now()
     done = 0
     for a in todo[:limit]:

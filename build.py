@@ -41,8 +41,24 @@ for r in rides:
 # ---- as-of date: latest ride or WHOOP morning
 asof = max([base[-1]['date']] + [r['date'] for r in rides] + [w['date'] for w in whoop])
 
-# ---- extend fitness (CTL 42 d, ATL 7 d)
-fd = [dict(r) for r in base]
+# ---- fitness (CTL 42 d, ATL 7 d)
+# From the first day with full 1-second ride analysis (data/ride_metrics.json) the daily load is
+# recomputed from that data; days before it keep the older series in fitness_base.json.
+try:
+    _met_all = {k: v for k, v in load('ride_metrics.json').items() if 'mmp' in v}
+except FileNotFoundError:
+    _met_all = {}
+met_load = {}
+for _m in _met_all.values():
+    met_load[_m['date']] = met_load.get(_m['date'], 0) + _m['moving_s'] / 3600 * (_m['np'] / FTP) ** 2 * 100
+met_ids = {int(k) for k in _met_all}
+for r in rides:  # rides not analysed yet (new today) fall back to rides.json
+    if r.get('strava_id') not in met_ids:
+        met_load[r['date']] = met_load.get(r['date'], 0) + tss(r)
+day_load = dict(met_load) if met_load else day_load
+cut = min(_m['date'] for _m in _met_all.values()) if _met_all else None
+base_cut = [dict(r) for r in base if cut is None or r['date'] < cut]
+fd = base_cut if base_cut else [dict(r) for r in base]
 c, a = fd[-1]['ctl'], fd[-1]['atl']
 day = D(fd[-1]['date']) + dt.timedelta(1)
 while day <= D(asof):
