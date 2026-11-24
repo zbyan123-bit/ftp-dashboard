@@ -38,5 +38,19 @@
   "max_w": 613,
   "km": 62.03,
   "np_source": "strava weighted average"
+ },
+ {
+  "date": "2026-11-24",
+  "strava_id": 21105867774,
+  "name": "MyWhoosh - Sweet spot 3x15mins",
+  "indoor": true,
+  "moving_h": 1.591,
+  "np": 198,
+  "avg_w": 183.0,
+  "avg_hr": 154.4,
+  "max_hr": 181.0,
+  "max_w": 344,
+  "km": 51.98,
+  "np_source": "strava weighted average"
  }
 ]
