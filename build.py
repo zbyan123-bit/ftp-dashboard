@@ -378,11 +378,13 @@ def zones_section():
               f'<p class="zsum"><b>{easy:.0f}%</b> easy (Z1–Z2) · <b>{tempo:.0f}%</b> tempo (Z3) · <b>{hard:.0f}%</b> hard (Z4+). {flag}</p></div>')
     else:
         tz = ''
-    return ('<section id="zones" aria-labelledby="zn-h"><div class="sec-head"><span class="eyebrow">Power zones</span>'
-            f'<h2 id="zn-h">Your zones at FTP {FTP} W ({FTP / KG:.2f} W/kg)</h2></div>'
-            f'<div class="card">{table}<p class="note">Based on % of FTP (Coggan). Sweet spot is {ssl}–{ssh} W (88–94%). '
-            f'Heart rate zones use an estimated maximum of about {HR_MAX} bpm, not a tested one. The zones change by themselves when FTP is updated.</p></div>'
-            f'{tz}</section>')
+    zs = ('<section id="zones" aria-labelledby="zn-h"><div class="sec-head"><span class="eyebrow">Power zones</span>'
+          f'<h2 id="zn-h">Your zones at FTP {FTP} W ({FTP / KG:.2f} W/kg)</h2></div>'
+          f'<div class="card">{table}<p class="note">Based on % of FTP (Coggan). Sweet spot is {ssl}–{ssh} W (88–94%). '
+          f'Heart rate zones use an estimated maximum of about {HR_MAX} bpm, not a tested one. The zones change by themselves when FTP is updated.</p></div></section>')
+    zt = (f'<section id="zonetime" aria-labelledby="zq-h"><div class="sec-head"><span class="eyebrow">Time in zones</span>'
+          f'<h2 id="zq-h">Where your last 28 days of riding went</h2></div>{tz}</section>') if tz else ''
+    return zs + zt
 
 pro_sec, pro_today = _pro.build(_rm, whoop, static.get('power_curve', []), FTP, KG, asof, week)
 _tp = today_panel()
