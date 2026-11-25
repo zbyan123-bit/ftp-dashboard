@@ -468,12 +468,12 @@ window.addEventListener('load',()=>setTimeout(()=>{
       <div class="tile"><span class="lab">Fitness (CTL) today</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=ctl">—</span></span></div>
       <div class="tile"><span class="lab">Fatigue (ATL) today</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=atl">—</span></span></div>
       <div class="tile"><span class="lab">Form (TSB) today</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=tsb">—</span></span></div>
-      <div class="tile warn"><span class="lab">Last 7 days</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=last7">—</span><span class="unit">h</span></span></div>
+      <div class="tile"><span class="lab">Last 7 days</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=last7">—</span><span class="unit">h</span></span></div>
       <div class="tile"><span class="lab">Peak fitness this year</span><span class="val"><span class="num dash-skeleton" data-source="kpis" data-field="value" data-where="metric=peak_ctl">—</span></span></div>
     </div>
     <div class="card">
       <h3 id="ch-week-h">Weekly hours</h3>
-      <p class="note">Weeks ending Sunday. Red: fitness (CTL) rose more than 7 points that week, which is too fast. Amber: summer weeks under 5 h. The current week is 5 days so far.</p>
+      <p class="note">Weeks ending Sunday. Red: fitness (CTL) rose more than 7 points that week, which is too fast. Amber: summer weeks under 5 h. The last bar is the current week so far. Hours include indoor rides from 24 Aug.</p>
       <div class="legend"><span><i id="lg-wk"></i>Hours</span><span><i id="lg-wkr"></i>Ramp &gt; 7 CTL/week</span><span><i id="lg-wkl"></i>Low-volume summer week</span></div>
       <div class="chart" id="ch-week" data-source="weekly"></div>
     </div>
@@ -513,12 +513,12 @@ window.addEventListener('load',()=>setTimeout(()=>{
   </section>
 
 <section id="stress" aria-labelledby="st-h">
-    <div class="sec-head"><span class="eyebrow">Ramp rate and training stress · all rides</span><h2 id="st-h">One week went over the safe ramp, and recovery paid for it</h2></div>
+    <div class="sec-head"><span class="eyebrow">Ramp rate and training stress · all rides</span><h2 id="st-h">Three weeks ramped too fast since September; load has eased since</h2></div>
     <div class="tiles">
-      <div class="tile bad"><span class="lab">Last full week load (<span data-source="elite_kpis" data-field="value" data-where="metric=ramp_last_lab">—</span>)</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=tss_last">—</span><span class="unit">TSS</span></span></div>
-      <div class="tile bad"><span class="lab">Fitness ramp that week</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=ramp_last">—</span><span class="unit">CTL points</span></span></div>
+      <div class="tile"><span class="lab">Last full week load (<span data-source="elite_kpis" data-field="value" data-where="metric=ramp_last_lab">—</span>)</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=tss_last">—</span><span class="unit">TSS</span></span></div>
+      <div class="tile"><span class="lab">Fitness ramp that week</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=ramp_last">—</span><span class="unit">CTL points</span></span></div>
       <div class="tile"><span class="lab">Monotony that week</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=mono_last">—</span><span class="unit">under 2 is fine</span></span></div>
-      <div class="tile good"><span class="lab">This week so far (16–20 Nov)</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=tss_cur">—</span><span class="unit">TSS</span></span></div>
+      <div class="tile"><span class="lab">This week so far (<span data-source="elite_kpis" data-field="value" data-where="metric=cur_lab">—</span>)</span><span class="val"><span class="num dash-skeleton" data-source="elite_kpis" data-field="value" data-where="metric=tss_cur">—</span><span class="unit">TSS</span></span></div>
     </div>
     <div class="card">
       <h3 id="ch-st-h">Weekly load, coloured by fitness ramp</h3>

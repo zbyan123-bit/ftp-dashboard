@@ -207,6 +207,109 @@ have = {r['key'] for r in data.get('sweet_spot', [])}
 data['sweet_spot'] = data.get('sweet_spot', []) + [r for r in ss_extra if r['key'] not in have]
 data.update(fitness_daily=fd, whoop=whoop, week=week)
 
+# ---- Load section: weekly hours/fitness, ramp and stress, and the "today" tiles, kept current
+day_hours = {}
+for _m in _met_all.values():
+    day_hours[_m['date']] = day_hours.get(_m['date'], 0) + _m['moving_s'] / 3600
+for r in rides:
+    if r.get('strava_id') not in met_ids:
+        day_hours[r['date']] = day_hours.get(r['date'], 0) + r['moving_h']
+
+def _weeks():
+    """(monday, sunday) pairs covering the fitness series, last one may be partial."""
+    d0 = D(fd[0]['date']); m = d0 - dt.timedelta(d0.weekday())
+    if m < d0: m += dt.timedelta(7)
+    out = []
+    while m <= D(asof):
+        out.append((m, m + dt.timedelta(6))); m += dt.timedelta(7)
+    return out
+
+def live_weekly(old):
+    keep = {w['week_end']: w for w in old}
+    new = []; prev_ctl = None
+    for w in old:
+        if w['week_end'] < _weeks()[0][1].isoformat():
+            new.append(w); prev_ctl = w['fitness_ctl']
+    for mon, sun in _weeks():
+        days = [(mon + dt.timedelta(i)).isoformat() for i in range(7) if (mon + dt.timedelta(i)).isoformat() <= asof]
+        endr = fdm[days[-1]]
+        ld = sum(fdm[d]['load'] for d in days if d in fdm)
+        if cut and mon.isoformat() < cut and sun.isoformat() in keep:
+            hrs = keep[sun.isoformat()]['hours']
+        else:
+            hrs = round(sum(day_hours.get(d, 0) for d in days), 1)
+        chg = None if prev_ctl is None else round(endr['ctl'] - prev_ctl, 1)
+        flag = 'ramp' if chg is not None and chg > 7 else ('low' if hrs < 5 and '06' <= sun.isoformat()[5:7] <= '09' else '')
+        new.append(dict(week_end=sun.isoformat(), hours=hrs, load=round(ld), fitness_ctl=endr['ctl'], fatigue_atl=endr['atl'],
+                        ctl_change=chg, flag=flag, partial=len(days) < 7))
+        prev_ctl = endr['ctl']
+    return new
+
+def live_load_weekly(old):
+    first = _weeks()[0][0].isoformat()
+    new = [w for w in old if w['week_start'] < first]
+    prev = None
+    for w in new: prev = w['ctl_end']
+    for mon, sun in _weeks():
+        days = [(mon + dt.timedelta(i)).isoformat() for i in range(7) if (mon + dt.timedelta(i)).isoformat() <= asof]
+        loads = [fdm[d]['load'] for d in days if d in fdm]
+        endr = fdm[days[-1]]
+        tot = sum(loads); mean = tot / len(loads)
+        sd = (sum((x - mean) ** 2 for x in loads) / len(loads)) ** 0.5
+        mono = round(mean / sd, 2) if sd > 0 else None
+        ramp = None if prev is None else round(endr['ctl'] - prev, 1)
+        part = len(days) < 7
+        new.append(dict(week_start=mon.isoformat(), week_end=days[-1], days=len(days), tss=round(tot), ctl_end=endr['ctl'],
+                        atl_end=endr['atl'], tsb_end=endr['tsb'], ramp=ramp if ramp is not None else 0.0, monotony=mono,
+                        strain=round(tot * mono) if mono else None,
+                        flag='partial week' if part else ('ramp over 7' if ramp and ramp > 7 else ''), partial=part))
+        prev = endr['ctl']
+    return new
+
+def live_kpis(old):
+    lastd = fd[-1]; ad_ = D(asof)
+    l7 = round(sum(day_hours.get((ad_ - dt.timedelta(i)).isoformat(), 0) for i in range(7)), 1)
+    pk = max(fd, key=lambda r: r['ctl'])
+    pk_old = max((w for w in static.get('weekly', []) if w['week_end'] < fd[0]['date']), key=lambda w: w['fitness_ctl'], default=None)
+    if pk_old and pk_old['fitness_ctl'] > pk['ctl']:
+        pk_v, pk_d = pk_old['fitness_ctl'], pk_old['week_end']
+    else:
+        pk_v, pk_d = pk['ctl'], pk['date']
+    upd = {'ctl': (lastd['ctl'], 'Fitness (CTL)'), 'atl': (lastd['atl'], 'Fatigue (ATL)'), 'tsb': (lastd['tsb'], 'Form (TSB)'),
+           'last7': (l7, f'Last 7 days to {fday(asof)}, all rides'), 'peak_ctl': (pk_v, f'Peak fitness ({fday(pk_d)})')}
+    out = []
+    for k in old:
+        k = dict(k)
+        if k.get('metric') in upd:
+            k['value'], k['label'] = upd[k['metric']]
+        out.append(k)
+    return out
+
+data['weekly'] = live_weekly(static.get('weekly', []))
+data['load_weekly'] = live_load_weekly(static.get('load_weekly', []))
+data['kpis'] = live_kpis(static.get('kpis', []))
+
+def live_elite(old, lw):
+    full = [w for w in lw if not w['partial']]
+    cur = lw[-1] if lw and lw[-1]['partial'] else None
+    lf = full[-1] if full else None
+    def sgn(v): return ('+' if v >= 0 else '−') + f'{abs(v):.1f}'
+    def lab(a, b):
+        a, b = D(a), D(b)
+        return f'{a.day}–{b.day} {b:%b}' if a.month == b.month else f'{a.day} {a:%b} – {b.day} {b:%b}'
+    upd = {'ctl_now': round(fd[-1]['ctl']), 'tsb_now': ('+' if fd[-1]['tsb'] >= 0 else '−') + str(round(abs(fd[-1]['tsb'])))}
+    if lf:
+        upd.update(ramp_last=sgn(lf['ramp']), ramp_last_lab=f'Week of {D(lf["week_start"]).day} {D(lf["week_start"]):%b}',
+                   tss_last=lf['tss'], mono_last=f'{lf["monotony"]:.2f}' if lf['monotony'] else '–')
+    upd['tss_cur'] = cur['tss'] if cur else 0
+    upd['cur_lab'] = lab(cur['week_start'], cur['week_end']) if cur else 'new week'
+    out = [dict(k, value=upd[k['metric']]) if k.get('metric') in upd else dict(k) for k in old]
+    have = {k['metric'] for k in out}
+    out += [dict(metric=m, value=v) for m, v in upd.items() if m not in have]
+    return out
+
+data['elite_kpis'] = live_elite(static.get('elite_kpis', []), data['load_weekly'])
+
 ad = D(asof)
 asof_s = f'{ad.day} {ad:%b}'
 asof_l = f'{ad.day} {ad:%B %Y}'
