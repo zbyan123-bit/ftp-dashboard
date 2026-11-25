@@ -9,6 +9,8 @@ import json, datetime as dt, pathlib
 ROOT = pathlib.Path(__file__).parent
 FTP = 255  # working FTP in W. Change here when FTP changes.
 KG = 68  # body weight for W/kg. Change when the athlete gives a new weight.
+GOAL_WKG = 4.3  # target W/kg
+GOAL_BY = 'June 2027'
 D = dt.date.fromisoformat
 load = lambda f: json.loads((ROOT / 'data' / f).read_text(encoding='utf-8'))
 
@@ -130,7 +132,7 @@ def today_panel():
                       f'{fday(w["date"])} · HRV {w["hrv"]} · RHR {w["rhr"]}'))
         cards.append(('Sleep', f'{w["asleep_h"]:.1f} h', f'bed {w["bedtime"]} · {w["sleep_perf"]}% performance'))
     tsb = last['tsb']; tcls = 'ok' if tsb >= -10 else ('warn' if tsb >= -25 else 'bad')
-    cards.append(('Form (TSB)', f'<span class="{tcls}">{tsb:+.0f}</span>', f'fitness {last["ctl"]:.0f} · fatigue {last["atl"]:.0f}'))
+    cards.append(('Form (TSB)', f'<span class="{tcls}">{int(tsb + 0.5) if tsb >= 0 else -int(-tsb + 0.5):+d}</span>', f'fitness {last["ctl"]:.0f} · fatigue {last["atl"]:.0f}'))
     cards.append(('This week', f'{wk_tss:.0f} TSS', f'{wk_h:.1f} h · {len(wk_r)} ride{"s" if len(wk_r) != 1 else ""} since {fday(mon.isoformat())}'))
     g = ''.join(f'<div class="t-c"><div class="l">{l}</div><div class="v">{v}</div><div class="s">{_h.escape(s)}</div></div>' for l, v, s in cards)
     parts = [f'<div class="t-h"><b>Today</b><span>updated {fday(asof)}</span></div>', f'<div class="t-g">{g}</div>']
@@ -178,6 +180,24 @@ def week_panel():
     return ('<div class="today wk">' + head + (f'<div class="wn">{_h.escape(note)}</div>' if note else '') +
             ''.join(rows) + '</div>')
 
+def hero_panel():
+    """Orange header band: FTP now, progress to the W/kg goal, next test."""
+    goal_w = round(GOAL_WKG * KG)
+    pct = min(100, round(FTP / goal_w * 100))
+    test = next((r for r in week if r['date'] >= asof and r['status'] == 'upcoming'
+                 and 'ftp' in (r.get('short') or r['plan']).lower() and 'test' in (r.get('short') or r['plan']).lower()), None)
+    nt = f'Next FTP test {fday(test["date"])}' if test else ''
+    mark = ('<svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18l5-6 4 3 7-9" fill="none" stroke="currentColor" '
+            'stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="19" cy="6" r="2.2" fill="currentColor"/></svg>')
+    return (f'<header class="hero"><div class="hero-in">'
+            f'<div class="hero-top"><div class="brand">{mark}<span>FTP Dashboard</span></div><div class="upd">Strava + WHOOP · updated {fday(asof)}</div></div>'
+            f'<div class="hero-main"><div class="hm-ftp"><div class="k">Working FTP</div>'
+            f'<div class="big">{FTP}<small>W</small></div><div class="sub">{FTP / KG:.2f} W/kg at {KG} kg</div></div>'
+            f'<div class="hm-goal"><div class="row"><b>Road to {GOAL_WKG} W/kg</b><span>{goal_w} W by {GOAL_BY}</span></div>'
+            f'<div class="bar" role="img" aria-label="{pct}% of goal power"><i style="width:{pct}%"></i></div>'
+            f'<div class="row sm"><span>{pct}% of goal power · {goal_w - FTP} W to go</span><span>{nt}</span></div></div></div>'
+            f'</div></header>')
+
 data = dict(static)
 try:
     ss_extra = load('sweet_spot_extra.json')
@@ -204,7 +224,7 @@ _tp = today_panel()
 if pro_today:
     _tp = _tp[:-len('</div>')] + pro_today + '</div>'
 html = html.replace('__PRO__', pro_sec)
-html = html.replace('__TODAY__', _tp + week_panel())
+html = html.replace('__TODAY__', hero_panel() + '<div class="top">' + _tp + week_panel() + '</div>')
 html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 last = fd[-1]
