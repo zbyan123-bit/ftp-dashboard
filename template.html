@@ -112,7 +112,7 @@ window.addEventListener('load',()=>setTimeout(()=>{
  if(!matchMedia('(max-width:640px)').matches) return;
  const nav=document.querySelector('.fd .jump'); if(!nav) return;
  const names={'takeaways-sec':'Key takeaways'}; nav.querySelectorAll('a').forEach(a=>names[a.getAttribute('href').slice(1)]=a.textContent);
- const groups=[['This week',['weekplan','recovery']],['Load and fitness',['load','fitnote','stress','intensity','hrzones']],['Power and FTP',['pro','power','pdcurve','sweetspot','efficiency','durability','indoor','climbs']],['Goal and plan',['goal','wkg','retest','tests','coach']],['Season so far',['takeaways-sec','ytd','trends']],['About the data',['data']]];
+ const groups=[['This week',['weekplan','recovery']],['Load and fitness',['load','fitnote','stress','intensity','hrzones']],['Power and FTP',['pro','zones','power','pdcurve','sweetspot','efficiency','durability','indoor','climbs']],['Goal and plan',['goal','wkg','retest','tests','coach']],['Season so far',['takeaways-sec','ytd','trends']],['About the data',['data']]];
  const root=document.querySelector('.fd'); const kpi=document.getElementById('kpi-top'); let anchor=kpi||nav;
  nav.replaceChildren();
  groups.forEach(([g,ids],gi)=>{
@@ -383,6 +383,22 @@ body{background:var(--bg)!important;color:var(--ink);padding:0!important;font-fa
 .psvg .ze,.lg .ze{fill:#2e9e6a;background:#2e9e6a}.psvg .zg,.lg .zg{fill:#e0a020;background:#e0a020}.psvg .zh,.lg .zh{fill:#d9483b;background:#d9483b}
 .lg .k1{background:var(--accent)!important}.lg .k2{background:repeating-linear-gradient(90deg,var(--blue) 0 5px,transparent 5px 8px)!important}
 
+
+/* Power zones */
+.zt-t td{vertical-align:middle}
+.zdot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.zbar{width:34%;min-width:120px}
+.zt{position:relative;height:10px;border-radius:99px;background:var(--panel-2)}
+.zt i{position:absolute;top:0;bottom:0;border-radius:99px}
+.zu{color:var(--ink-2);min-width:16rem}
+.zstack{display:flex;height:22px;border-radius:99px;overflow:hidden;background:var(--panel-2)}
+.zstack i{display:block;height:100%}
+.zleg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2)}
+.zleg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.zleg b{color:var(--ink)}
+.zsum{font-size:14px!important}
+@media (max-width:640px){.zbar,.zu,.zp{display:none}.zt-t th.zbar,.zt-t th.zu,.zt-t th.zp{display:none}}
+
 /* Mobile collapsible sections */
 @media (max-width:640px){
  .fd section.mc{background:var(--panel)!important;border:0!important;border-radius:16px!important;box-shadow:var(--shadow);padding:14px 16px!important}
@@ -412,7 +428,7 @@ window.addEventListener('load',()=>setTimeout(()=>{
     <p class="lede dash-skeleton" data-source="notes" data-field="text" data-where="key=headline-1">—</p>
   </header>
     <nav class="jump" aria-label="Sections">
-      <a href="#ytd">Year to date</a><a href="#trends">Monthly trends</a><a href="#load">Load</a><a href="#fitnote">Fitness events</a><a href="#stress">Ramp and stress</a><a href="#recovery">Recovery</a><a href="#intensity">Intensity</a><a href="#hrzones">Intensity by HR</a><a href="#weekplan">Plan vs actual</a><a href="#pro">Pro metrics</a><a href="#power">Power</a><a href="#pdcurve">Power curve</a><a href="#sweetspot">Sweet spot</a><a href="#efficiency">Efficiency</a><a href="#durability">Durability</a><a href="#indoor">Indoor</a><a href="#climbs">Climbs</a><a href="#goal">Gap to goal</a><a href="#wkg">Weight</a><a href="#retest">FTP retest</a><a href="#tests">Test calendar</a><a href="#coach">Coaching plan</a><a href="#data">Data notes</a>
+      <a href="#ytd">Year to date</a><a href="#trends">Monthly trends</a><a href="#load">Load</a><a href="#fitnote">Fitness events</a><a href="#stress">Ramp and stress</a><a href="#recovery">Recovery</a><a href="#intensity">Intensity</a><a href="#hrzones">Intensity by HR</a><a href="#weekplan">Plan vs actual</a><a href="#pro">Pro metrics</a><a href="#zones">Power zones</a><a href="#power">Power</a><a href="#pdcurve">Power curve</a><a href="#sweetspot">Sweet spot</a><a href="#efficiency">Efficiency</a><a href="#durability">Durability</a><a href="#indoor">Indoor</a><a href="#climbs">Climbs</a><a href="#goal">Gap to goal</a><a href="#wkg">Weight</a><a href="#retest">FTP retest</a><a href="#tests">Test calendar</a><a href="#coach">Coaching plan</a><a href="#data">Data notes</a>
     </nav>
 
   <div class="tiles" id="kpi-top">

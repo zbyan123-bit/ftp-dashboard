@@ -52,6 +52,6 @@ Netlify publishes the repository root on every push. There is no build step on N
 ## Rules
 - Only real numbers from Strava and WHOOP. Never invent a value; leave a day out if data is missing.
 - No GPS data and no raw WHOOP mode.
-- FTP is set in `build.py` (`FTP = 255`). Change it only when the athlete confirms a new FTP.
+- FTP is set in `build.py` (`FTP = 255`). Change it only when the athlete confirms a new FTP. After changing it, also bump `VERSION` in `scripts/metrics.py` so the sync job re-analyses every ride with the new FTP (zones, IF and TSS depend on it). The Power zones section follows FTP automatically.
 - `data/static.json` (power curve, durability, sweet spot, weight and so on) is a snapshot from
   20 Nov 2026. It is refreshed by hand in a coaching chat, not here.

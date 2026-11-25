@@ -322,11 +322,73 @@ try:
     _rm = load('ride_metrics.json')
 except FileNotFoundError:
     _rm = {}
+# ---- Power zones section (follows FTP automatically)
+HR_MAX = 202  # estimated maximum heart rate (not measured)
+HR_ZONES = [(0, 120), (121, 140), (141, 160), (161, 180), (181, None), (None, None), (None, None)]
+ZONES = [  # name, lower %, upper %, what it is for
+    ('Z1', 'Recovery', 0, 55, 'Spinning. Active recovery, warm-up and cool-down.'),
+    ('Z2', 'Endurance', 56, 75, 'Base miles. You can talk. Most of your hours should be here.'),
+    ('Z3', 'Tempo', 76, 90, 'Comfortably hard. Useful in small doses; too much is the grey zone.'),
+    ('Z4', 'Threshold', 91, 105, 'Around FTP. Sweet spot (88–94%) sits at its lower edge. Intervals of 10–20 min.'),
+    ('Z5', 'VO2max', 106, 120, 'Hard 3–8 min efforts. Raises your ceiling.'),
+    ('Z6', 'Anaerobic', 121, 150, 'Short 30 s–2 min efforts.'),
+    ('Z7', 'Sprint', 151, None, 'Under 30 s, all-out.'),
+]
+ZCOL = ['#7fb8a4', '#3fa37a', '#e0a020', '#ef6420', '#d9483b', '#a3304f', '#6b2a6b']
+
+def _w(pct):
+    return int(FTP * pct / 100 + 0.5)
+
+def zones_section():
+    scale = 400
+    rows = []
+    for i, (z, name, lo, hi, use) in enumerate(ZONES):
+        wlo = 0 if lo == 0 else _w(lo)
+        whi = None if hi is None else _w(hi)
+        watts = f'under {whi + 1} W' if lo == 0 else (f'{wlo}+ W' if whi is None else f'{wlo}–{whi} W')
+        pct = f'under 56%' if lo == 0 else (f'{lo}%+' if hi is None else f'{lo}–{hi}%')
+        a, b = wlo, (scale if whi is None else min(whi, scale))
+        bar = (f'<div class="zt"><i style="left:{a / scale * 100:.1f}%;width:{max(b - a, 6) / scale * 100:.1f}%;background:{ZCOL[i]}"></i></div>')
+        h_lo, h_hi = HR_ZONES[i]
+        hr = '' if h_lo is None and h_hi is None else (f'under {h_hi + 1}' if h_lo == 0 else (f'{h_lo}+' if h_hi is None else f'{h_lo}–{h_hi}'))
+        rows.append(f'<tr><td><span class="zdot" style="background:{ZCOL[i]}"></span><b>{z}</b> {name}</td><td class="n"><b>{watts}</b></td>'
+                    f'<td class="n zp">{pct}</td><td class="zbar">{bar}</td><td class="n zh">{hr}</td><td class="wrap zu">{_h.escape(use)}</td></tr>')
+    ssl, ssh = _w(88), _w(94)
+    table = ('<div class="tbl"><table class="zt-t"><thead><tr><th>Zone</th><th class="n">Power</th><th class="n zp">% FTP</th><th class="zbar"></th>'
+             '<th class="n zh">Heart rate</th><th class="zu">Use</th></tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
+    # time in zones, last 28 days
+    cutoff = (D(asof) - dt.timedelta(28)).isoformat()
+    tot = [0] * 7
+    n_r = 0
+    for v in _rm.values():
+        if 'zones' in v and v.get('date', '') > cutoff and len(v['zones']) == 7:
+            n_r += 1
+            for i in range(7): tot[i] += v['zones'][i]
+    tsum = sum(tot)
+    if tsum:
+        pc = [t / tsum * 100 for t in tot]
+        segs = ''.join(f'<i style="width:{p:.2f}%;background:{ZCOL[i]}" title="Z{i + 1} {p:.0f}%"></i>' for i, p in enumerate(pc) if p > 0.2)
+        leg = ''.join(f'<span><i style="background:{ZCOL[i]}"></i>Z{i + 1} <b>{pc[i]:.0f}%</b> · {tot[i] / 3600:.1f} h</span>' for i in range(7))
+        easy, tempo, hard = pc[0] + pc[1], pc[2], sum(pc[3:])
+        flag = ('Tempo is above 20%: that is the grey zone, hard enough to tire you but not hard enough to push FTP.' if tempo > 20
+                else 'Tempo share is under 20%, so the grey zone is not a problem.')
+        tz = (f'<div class="card"><h3>Time in each zone, last 28 days</h3>'
+              f'<p class="note">{n_r} rides, indoor and outdoor, from 1-second power at FTP {FTP} W.</p>'
+              f'<div class="zstack">{segs}</div><div class="zleg">{leg}</div>'
+              f'<p class="zsum"><b>{easy:.0f}%</b> easy (Z1–Z2) · <b>{tempo:.0f}%</b> tempo (Z3) · <b>{hard:.0f}%</b> hard (Z4+). {flag}</p></div>')
+    else:
+        tz = ''
+    return ('<section id="zones" aria-labelledby="zn-h"><div class="sec-head"><span class="eyebrow">Power zones</span>'
+            f'<h2 id="zn-h">Your zones at FTP {FTP} W ({FTP / KG:.2f} W/kg)</h2></div>'
+            f'<div class="card">{table}<p class="note">Based on % of FTP (Coggan). Sweet spot is {ssl}–{ssh} W (88–94%). '
+            f'Heart rate zones use an estimated maximum of about {HR_MAX} bpm, not a tested one. The zones change by themselves when FTP is updated.</p></div>'
+            f'{tz}</section>')
+
 pro_sec, pro_today = _pro.build(_rm, whoop, static.get('power_curve', []), FTP, KG, asof, week)
 _tp = today_panel()
 if pro_today:
     _tp = _tp[:-len('</div>')] + pro_today + '</div>'
-html = html.replace('__PRO__', pro_sec)
+html = html.replace('__PRO__', pro_sec + zones_section())
 html = html.replace('__TODAY__', hero_panel() + '<div class="top">' + _tp + week_panel() + '</div>')
 html = html.replace('__ASOF_LONG__', asof_l).replace('__ASOF__', asof_s)
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
