@@ -52,5 +52,19 @@
   "max_w": 344,
   "km": 51.98,
   "np_source": "strava weighted average"
+ },
+ {
+  "date": "2026-11-26",
+  "strava_id": 21127509085,
+  "name": "Morning Ride",
+  "indoor": false,
+  "moving_h": 3.343,
+  "np": 169,
+  "avg_w": 150.2,
+  "avg_hr": 135.3,
+  "max_hr": 175.0,
+  "max_w": 714,
+  "km": 91.6,
+  "np_source": "strava weighted average"
  }
 ]
