@@ -592,5 +592,16 @@
 "asleep_h": 7.59,
 "sleep_perf": 89,
 "consistency": 89
+},
+{
+"date": "2026-11-27",
+"recovery": 31,
+"rhr": 57,
+"hrv": 63.3,
+"bedtime": "23:48",
+"bed_h": -0.2,
+"asleep_h": 7.87,
+"sleep_perf": 84,
+"consistency": 83
 }
 ]
