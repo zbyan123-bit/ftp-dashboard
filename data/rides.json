@@ -80,5 +80,19 @@
   "max_w": 578,
   "km": 69.45,
   "np_source": "strava weighted average"
+ },
+ {
+  "date": "2026-11-28",
+  "strava_id": 21150767252,
+  "name": "Afternoon Ride",
+  "indoor": false,
+  "moving_h": 3.374,
+  "np": 168,
+  "avg_w": 157.4,
+  "avg_hr": 137.5,
+  "max_hr": 154.0,
+  "max_w": 500,
+  "km": 92.11,
+  "np_source": "strava weighted average"
  }
 ]
